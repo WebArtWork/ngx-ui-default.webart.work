@@ -1,0 +1,26 @@
+<h1 class="demo-page__title">File</h1>
+
+<p class="demo-page__note">
+	FileUpload paired with an existing-file list, the pattern a document manager page actually
+	needs.
+</p>
+
+<section class="demo-section">
+	<ngx-file label="Add Files" [multiple]="true" placeholder="Drag and drop files here to upload." />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Existing Files</h2>
+	<div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 28rem">
+		@for (file of files(); track file.name) {
+			<div
+				style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem; border: 1px solid var(--c-border); border-radius: var(--radius)"
+			>
+				<span class="material-icons">description</span>
+				<span style="flex: 1">{{ file.name }}</span>
+				<wtag type="secondary" [value]="file.size" />
+				<button wbutton [text]="true" type="danger" size="small" icon="delete" (wClick)="remove(file.name)"></button>
+			</div>
+		}
+	</div>
+</section>

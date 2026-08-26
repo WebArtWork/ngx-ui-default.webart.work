@@ -1,0 +1,37 @@
+<div class="tasks">
+	<h1>Tasks</h1>
+	<p class="tasks__note">
+		Each column is an independently reorderable list (drag to reprioritize) — a lightweight
+		board built from three <code>p-orderList</code> instances rather than a dedicated Kanban
+		component, which ngx-prime doesn't ship.
+	</p>
+
+	<div class="tasks__board">
+		<p-orderList [ngModel]="todo" header="To Do" dataKey="id" [dragdrop]="true">
+			<ng-template let-task #item>
+				<div class="tasks__card">
+					<div class="tasks__card-title">{{ task.title }}</div>
+					<div class="tasks__card-assignee">{{ task.assignee }}</div>
+				</div>
+			</ng-template>
+		</p-orderList>
+
+		<p-orderList [ngModel]="inProgress" header="In Progress" dataKey="id" [dragdrop]="true">
+			<ng-template let-task #item>
+				<div class="tasks__card">
+					<div class="tasks__card-title">{{ task.title }}</div>
+					<div class="tasks__card-assignee">{{ task.assignee }}</div>
+				</div>
+			</ng-template>
+		</p-orderList>
+
+		<p-orderList [ngModel]="done" header="Done" dataKey="id" [dragdrop]="true">
+			<ng-template let-task #item>
+				<div class="tasks__card">
+					<div class="tasks__card-title">{{ task.title }}</div>
+					<div class="tasks__card-assignee">{{ task.assignee }}</div>
+				</div>
+			</ng-template>
+		</p-orderList>
+	</div>
+</div>

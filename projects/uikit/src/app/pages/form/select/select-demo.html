@@ -1,0 +1,43 @@
+<h1 class="demo-page__title">Select</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<wselect
+		[(wModel)]="selectedCity"
+		[items]="cities"
+		bindLabel="name"
+		bindValue="code"
+		placeholder="Select a city"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Searchable</h2>
+	<wselect
+		[(wModel)]="selectedCity"
+		[items]="cities"
+		bindLabel="name"
+		bindValue="code"
+		[searchable]="true"
+		placeholder="Search a city"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Clearable</h2>
+	<wselect
+		[(wModel)]="selectedCity"
+		[items]="cities"
+		bindLabel="name"
+		bindValue="code"
+		[clearable]="true"
+		placeholder="Select a city"
+	/>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<wselect [items]="cities" bindLabel="name" bindValue="code" placeholder="Disabled" [disabled]="true" />
+	</div>
+</section>

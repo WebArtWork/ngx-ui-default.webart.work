@@ -1,0 +1,16 @@
+<h1 class="demo-page__title">Checkbox</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<winput type="checkbox" label="I agree" [(wModel)]="checked" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Checkbox Group</h2>
+	<winput type="checkbox" [items]="fruits" [(wModel)]="selectedFruits" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Disabled</h2>
+	<winput type="checkbox" label="Disabled" [disabled]="true" />
+</section>

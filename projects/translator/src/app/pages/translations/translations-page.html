@@ -1,0 +1,67 @@
+<div class="tr-page">
+	@if (translationsState.loading()) {
+		<p>Loading translation files…</p>
+	} @else if (translationsState.loadError()) {
+		<p class="tr-page__note" style="color: var(--p-red-500)">{{ translationsState.loadError() }}</p>
+	} @else {
+		<div class="tr-toolbar">
+			<winput
+				[type]="'text'"
+				placeholder="Search key or value…"
+				[(wModel)]="filterText"
+				style="width: 18rem"
+			/>
+			<label style="display: flex; align-items: center; gap: 0.5rem">
+				<wtoggle
+					[checked]="onlyIssues() && translationsState.issueCount() > 0"
+					[disabled]="translationsState.issueCount() === 0"
+					(checkedChange)="onlyIssues.set($event)"
+				/>
+				Missing ({{ translationsState.issueCount() }})
+			</label>
+			<label style="display: flex; align-items: center; gap: 0.5rem">
+				<wtoggle
+					[checked]="onlyModified() && translationsState.modifiedCount() > 0"
+					[disabled]="translationsState.modifiedCount() === 0"
+					(checkedChange)="onlyModified.set($event)"
+				/>
+				Modified ({{ translationsState.modifiedCount() }})
+			</label>
+			<span style="flex: 1"></span>
+			<button
+				wbutton
+				[type]="'secondary'"
+				[icon]="'refresh'"
+				[size]="'small'"
+				[disabled]="!translationsState.dirty()"
+				(wClick)="reset()"
+			>
+				Reset
+			</button>
+		</div>
+
+		<div class="tr-table-wrap">
+			@if (filteredRows().length === 0) {
+				<p>No keys match the current filter.</p>
+			} @else {
+				<wtable [rows]="filteredRows()" [columns]="tableColumns()" [bindValue]="'index'">
+					<ng-template cell="value" let-row>
+						<div style="display: flex; align-items: center; gap: 0.5rem">
+							<winput
+								[type]="'text'"
+								style="width: 100%"
+								[wModel]="row.values[translationsState.selectedLanguage()]"
+								(wModelChange)="setValue(row, translationsState.selectedLanguage(), $event)"
+							/>
+							@if (row.missing.includes(translationsState.selectedLanguage())) {
+								<wtag [type]="'danger'" value="missing" />
+							} @else if (row.untranslated.includes(translationsState.selectedLanguage())) {
+								<wtag [type]="'warning'" value="untranslated" />
+							}
+						</div>
+					</ng-template>
+				</wtable>
+			}
+		</div>
+	}
+</div>

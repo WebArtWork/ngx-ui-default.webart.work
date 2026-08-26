@@ -1,0 +1,34 @@
+@if (hasRouterLink()) {
+	<a
+		routerLinkActive="_activeLink"
+		[class.mi__iconOnly]="!name()"
+		[routerLink]="routerLink()"
+		class="mi"
+	>
+		<span class="mi__iconWrap">
+			<i class="pi pi-{{ icon() }} mi__icon"></i>
+		</span>
+
+		@if (name()) {
+			<span class="mi__name" [translate]="name()"></span>
+		}
+	</a>
+} @else {
+	<span
+		[class.mi__iconOnly]="!name()"
+		class="mi"
+		role="button"
+		tabindex="0"
+		[attr.aria-label]="!name() ? ariaLabel() || icon() : null"
+		(click)="onAction()"
+		(keydown)="onKeydown($event)"
+	>
+		<span class="mi__iconWrap">
+			<i class="pi pi-{{ icon() }} mi__icon"></i>
+		</span>
+
+		@if (name()) {
+			<span class="mi__name" [translate]="name()"></span>
+		}
+	</span>
+}

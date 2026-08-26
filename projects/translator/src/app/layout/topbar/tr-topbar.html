@@ -1,0 +1,41 @@
+<header class="tr-topbar">
+	<span class="tr-topbar__title">NGX Prime Default Translator</span>
+
+	<div class="tr-topbar__actions">
+		<wselect
+			[items]="translationsState.languages"
+			bindLabel="name"
+			bindValue="code"
+			[wModel]="translationsState.selectedLanguage()"
+			(wModelChange)="onLanguageChange($event)"
+			aria-label="Language"
+		/>
+
+		<button
+			wbutton
+			[type]="'secondary'"
+			[text]="true"
+			[rounded]="true"
+			[disabled]="!canDownloadSelected()"
+			[icon]="'download'"
+			[ariaLabel]="'Download selected language JSON'"
+			[wtooltip]="
+				translationsState.isDefaultLanguageSelected()
+					? 'English is the source language — nothing to download'
+					: 'Download translations'
+			"
+			tooltipPosition="bottom"
+			(wClick)="downloadSelectedLanguage()"
+		></button>
+
+		<button
+			wbutton
+			[type]="'secondary'"
+			[text]="true"
+			[rounded]="true"
+			[icon]="dark() ? 'light_mode' : 'dark_mode'"
+			[ariaLabel]="dark() ? 'Switch to light mode' : 'Switch to dark mode'"
+			(wClick)="toggleDarkMode()"
+		></button>
+	</div>
+</header>

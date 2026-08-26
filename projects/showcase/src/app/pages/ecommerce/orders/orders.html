@@ -1,0 +1,20 @@
+<div class="orders">
+	<h1>Orders</h1>
+	<wcard>
+		<wtable
+			[rows]="orders()"
+			[columns]="columns"
+			[config]="config"
+			[bindValue]="'id'"
+			[title]="'Orders'"
+			(onSearch)="onSearch($event)"
+		>
+			<ng-template cell="statusLabel" let-order>
+				<wtag [type]="order.tagType" [value]="order.statusLabel"></wtag>
+			</ng-template>
+			<ng-template sort="id"></ng-template>
+			<ng-template sort="customer"></ng-template>
+			<ng-template sort="date"></ng-template>
+		</wtable>
+	</wcard>
+</div>

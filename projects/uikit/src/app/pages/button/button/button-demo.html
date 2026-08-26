@@ -1,0 +1,52 @@
+<h1 class="demo-page__title">Button</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<button wbutton>Button</button>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row">
+		@for (size of sizes; track size) {
+			<button wbutton [size]="size">{{ size ?? 'Normal' }}</button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Type</h2>
+	<div class="demo-section__row">
+		@for (type of types; track type) {
+			<button wbutton [type]="type">{{ type }}</button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Variants</h2>
+	<div class="demo-section__row">
+		<button wbutton [outlined]="true">Outlined</button>
+		<button wbutton [text]="true">Text</button>
+		<button wbutton type="link" href="#">Link</button>
+		<button wbutton [rounded]="true">Rounded</button>
+		<button wbutton [raised]="true">Raised</button>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<button wbutton [disabled]="true">Disabled</button>
+		<button wbutton [loading]="true">Loading</button>
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Icons</h2>
+	<div class="demo-section__row">
+		<button wbutton icon="check">Save</button>
+		<button wbutton icon="delete" iconPos="right" type="danger">Delete</button>
+		<button wbutton icon="favorite" [rounded]="true" [text]="true" ariaLabel="Like"></button>
+	</div>
+</section>

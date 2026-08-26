@@ -1,0 +1,23 @@
+<main class="dashboard">
+	<header class="dashboard__header">
+		<nav class="dashboard__nav">
+			@for (_view of views; track $index) {
+			<button
+				wbutton
+				type="secondary"
+				[disableSubmit]="true"
+				[class.is-active]="view() === _view"
+				(wClick)="onSelectView(_view)"
+			>
+				{{_view.replace('-', ' ') | titlecase}}
+			</button>
+			}
+		</nav>
+	</header>
+
+	<section class="dashboard__content">
+		@switch (view()) { @case ('client') {
+		<app-client />
+		} }
+	</section>
+</main>

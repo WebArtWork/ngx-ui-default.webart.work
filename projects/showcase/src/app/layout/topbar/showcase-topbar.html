@@ -1,0 +1,36 @@
+<header class="showcase-topbar">
+	<button
+		type="button"
+		class="showcase-topbar__menu-toggle"
+		aria-label="Toggle navigation"
+		(click)="menuToggle.emit()"
+	>
+		<i class="material-icons">menu</i>
+	</button>
+
+	<span class="showcase-topbar__title">NGX Prime Default Showcase</span>
+
+	<div class="showcase-topbar__actions">
+		@if (pagePromptService.config()) {
+			<button
+				wbutton
+				[text]="true"
+				[rounded]="true"
+				icon="auto_awesome"
+				ariaLabel="Create a page like this one with AI"
+				(wClick)="openPagePrompt()"
+			></button>
+		}
+
+		<button
+			wbutton
+			[text]="true"
+			[rounded]="true"
+			[icon]="dark() ? 'light_mode' : 'dark_mode'"
+			[ariaLabel]="dark() ? 'Switch to light mode' : 'Switch to dark mode'"
+			(wClick)="toggleDarkMode()"
+		></button>
+	</div>
+
+	<sc-page-prompt-dialog [(visible)]="promptDialogVisible" />
+</header>

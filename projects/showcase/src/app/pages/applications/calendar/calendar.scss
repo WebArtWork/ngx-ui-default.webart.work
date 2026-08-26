@@ -1,0 +1,23 @@
+h1 {
+	margin: 0 0 1.5rem;
+	font-size: 1.5rem;
+}
+
+.calendar-page__grid {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1.5rem;
+	align-items: start;
+}
+
+.calendar-page__events {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.calendar-page__event {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}

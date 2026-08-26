@@ -1,0 +1,88 @@
+<div class="settings">
+	<section class="settings__section">
+		<h2 class="settings__label" translate>Change password</h2>
+		<form (submit)="wSecuritySubmit(); $event.preventDefault()" class="settings__content">
+			<div>
+				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Enter your current password...')()" [formField]="securityForm.currentPassword" />
+				<app-field-error [field]="securityForm.currentPassword" />
+			</div>
+			<div>
+				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Enter your new password...')()" [formField]="securityForm.newPassword" />
+				<app-field-error [field]="securityForm.newPassword" />
+			</div>
+			<div>
+				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Confirm your new password...')()" [formField]="securityForm.confirmPassword" />
+				<app-field-error [field]="securityForm.confirmPassword" />
+			</div>
+			<button wbutton [disabled]="isSecurityDisabled()"><span translate>Update password</span></button>
+		</form>
+	</section>
+
+	<section class="settings__section">
+		<h2 class="settings__label" translate>Theme</h2>
+		<div class="settings__content settings__content--inline settings__theme">
+			<div class="settings__theme-row">
+				<span class="settings__theme-label" translate>Mode</span>
+				<div class="settings__theme-group">
+					@for (m of themeService.modes(); track m) {
+						<button
+							wbutton
+							[disableSubmit]="true"
+							size="small"
+							[text]="themeService.mode() !== m"
+							(wClick)="themeService.setMode(m)"
+						>
+							{{ m }}
+						</button>
+					}
+				</div>
+			</div>
+
+			<div class="settings__theme-row">
+				<span class="settings__theme-label" translate>Density</span>
+				<div class="settings__theme-group">
+					@for (d of themeService.densities(); track d) {
+						<button
+							wbutton
+							[disableSubmit]="true"
+							size="small"
+							[text]="themeService.density() !== d"
+							(wClick)="themeService.setDensity(d)"
+						>
+							{{ d }}
+						</button>
+					}
+				</div>
+			</div>
+
+			<div class="settings__theme-row">
+				<span class="settings__theme-label" translate>Radius</span>
+				<div class="settings__theme-group">
+					@for (r of themeService.radiuses(); track r) {
+						<button
+							wbutton
+							[disableSubmit]="true"
+							size="small"
+							[text]="themeService.radius() !== r"
+							(wClick)="themeService.setRadius(r)"
+						>
+							{{ r }}
+						</button>
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="settings__section">
+		<h2 class="settings__label" translate>Switch language</h2>
+		@if (languageName()) {
+			<button (click)="nextLanguage()" class="settings__language" [attr.aria-label]="translateService.translate('Switch language')()" type="button">
+				<span class="settings__flag" aria-hidden="true">{{ languageFlagEmoji() }}</span>
+				<span [translate]="languageName()"></span>
+			</button>
+		}
+	</section>
+
+	<div class="settings__actions"><button wbutton type="secondary" [icon]="'logout'" [disableSubmit]="true" (wClick)="userService.logout()"><span translate>Logout</span></button></div>
+</div>

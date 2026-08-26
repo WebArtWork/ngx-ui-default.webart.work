@@ -1,0 +1,13 @@
+<div class="auth">
+	<wcard [title]="'Sign In'" class="auth__card">
+		<div class="auth__form">
+			<winput type="email" label="Email" [(wModel)]="email" placeholder="name@example.com" />
+			<winput type="password" label="Password" [(wModel)]="password" />
+			<winput type="checkbox" [(wModel)]="remember" label="Remember me" />
+			<button wbutton type="primary" icon="login" extraClass="w-full">Sign In</button>
+		</div>
+		<p class="auth__switch">
+			Don't have an account? <a routerLink="/authentication/register">Create one</a>
+		</p>
+	</wcard>
+</div>

@@ -1,0 +1,26 @@
+<h1 class="demo-page__title">Chart Dashboard</h1>
+
+<p class="demo-page__note">
+	Multiple charts laid out together as a dashboard, not isolated single-chart examples.
+</p>
+
+<section class="demo-section" style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem">
+	<div>
+		<h2 class="demo-section__title">Revenue Trend</h2>
+		<div style="height: 16rem">
+			<wchart type="line" [data]="revenue" [options]="chartOptions" />
+		</div>
+	</div>
+	<div>
+		<h2 class="demo-section__title">Traffic Channels</h2>
+		<div style="height: 16rem">
+			<wchart type="doughnut" [data]="channels" />
+		</div>
+	</div>
+	<div style="grid-column: span 2">
+		<h2 class="demo-section__title">Weekly Active Users</h2>
+		<div style="height: 14rem">
+			<wchart type="bar" [data]="weeklyActive" [options]="chartOptions" />
+		</div>
+	</div>
+</section>

@@ -1,0 +1,43 @@
+<div class="chat">
+	<wcard class="chat__contacts">
+		<div class="chat__contact-list">
+			@for (contact of contacts; track contact.id) {
+				<button
+					type="button"
+					class="chat__contact"
+					[class.chat__contact--active]="contact.id === activeContactId()"
+					(click)="selectContact(contact.id)"
+				>
+					<wavatar [label]="contact.initials" [shape]="'circle'" />
+					<div class="chat__contact-info">
+						<div class="chat__contact-name">{{ contact.name }}</div>
+						<div class="chat__contact-last">{{ contact.lastMessage }}</div>
+					</div>
+				</button>
+			}
+		</div>
+	</wcard>
+
+	<wcard class="chat__conversation">
+		<div class="chat__messages">
+			@for (message of messages(); track $index) {
+				<div class="chat__bubble-row" [class.chat__bubble-row--me]="message.from === 'me'">
+					<div class="chat__bubble" [class.chat__bubble--me]="message.from === 'me'">
+						<div>{{ message.text }}</div>
+						<div class="chat__bubble-time">{{ message.time }}</div>
+					</div>
+				</div>
+			}
+		</div>
+
+		<div class="chat__composer">
+			<winput
+				placeholder="Type a message…"
+				style="flex: 1"
+				[(wModel)]="draft"
+				(wKeydown)="$event.key === 'Enter' && send()"
+			/>
+			<button wbutton [type]="'primary'" [icon]="'send'" (wClick)="send()"></button>
+		</div>
+	</wcard>
+</div>

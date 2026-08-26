@@ -1,0 +1,36 @@
+.uikit-topbar {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	height: 4rem;
+	padding: 0 1rem;
+	border-bottom: 1px solid var(--p-content-border-color);
+}
+
+.uikit-topbar__menu-toggle {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: inherit;
+
+	@media (max-width: 960px) {
+		display: inline-flex;
+	}
+}
+
+.uikit-topbar__title {
+	font-weight: 600;
+	font-size: 1.125rem;
+}
+
+.uikit-topbar__actions {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	margin-left: auto;
+}

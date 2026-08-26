@@ -1,0 +1,31 @@
+h1 {
+	margin: 0 0 0.5rem;
+	font-size: 1.5rem;
+}
+
+.tasks__note {
+	color: var(--p-text-muted-color);
+	max-width: 42rem;
+	margin: 0 0 1.5rem;
+}
+
+.tasks__board {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.tasks__card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.tasks__card-title {
+	font-weight: 600;
+}
+
+.tasks__card-assignee {
+	font-size: 0.8rem;
+	color: var(--p-text-muted-color);
+}

@@ -1,0 +1,37 @@
+.uikit-sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+	padding: 1rem 0.75rem;
+}
+
+.uikit-sidebar__nav {
+	width: 100%;
+}
+
+.uikit-sidebar__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.uikit-sidebar__link {
+	display: block;
+	padding: 0.5rem 0.75rem;
+	border-radius: var(--radius);
+	color: var(--c-text-muted);
+	text-decoration: none;
+	font-size: 0.875rem;
+
+	&:hover {
+		background: var(--c-bg-tertiary);
+		color: var(--c-text-primary);
+	}
+}
+
+.uikit-sidebar__link--active {
+	background: var(--c-bg-tertiary);
+	color: var(--c-primary);
+	font-weight: 600;
+}

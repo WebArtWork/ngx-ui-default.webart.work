@@ -1,0 +1,37 @@
+h1 {
+	margin: 0 0 1.5rem;
+	font-size: 1.5rem;
+}
+
+.project-list__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+}
+
+.project-list__card {
+	cursor: pointer;
+}
+
+.project-list__card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+
+	h3 {
+		margin: 0;
+		font-size: 1.05rem;
+	}
+}
+
+.project-list__client {
+	color: var(--p-text-muted-color);
+	margin: 0.25rem 0 0.75rem;
+}
+
+.project-list__due {
+	margin: 0.5rem 0 0;
+	font-size: 0.875rem;
+	color: var(--p-text-muted-color);
+}

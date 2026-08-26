@@ -1,0 +1,36 @@
+export const environment = {
+	roles: [],
+	production: true,
+	appId: 'appId',
+	url: 'https://it.webart.work',
+	sign: {
+		logo: '',
+		email: '',
+		password: '',
+	},
+	image: {
+		default: 'https://ngx.webart.work/logo.png',
+		logo: 'https://ngx.webart.work/logo.png',
+	},
+	defaultLanguageCode: 'en',
+	languages: [
+		{ code: 'cs', name: 'Czech', nativeName: '\u010ce\u0161tina' },
+		{ code: 'de', name: 'German', nativeName: 'Deutsch' },
+		{ code: 'el', name: 'Greek', nativeName: '\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac' },
+		{ code: 'en', name: 'English', nativeName: 'English' },
+		{ code: 'es', name: 'Spanish', nativeName: 'Espa\u00f1ol' },
+		{ code: 'fr', name: 'French', nativeName: 'Fran\u00e7ais' },
+		{ code: 'hu', name: 'Hungarian', nativeName: 'Magyar' },
+		{ code: 'it', name: 'Italian', nativeName: 'Italiano' },
+		{ code: 'nl', name: 'Dutch', nativeName: 'Nederlands' },
+		{ code: 'pl', name: 'Polish', nativeName: 'Polski' },
+		{ code: 'pt', name: 'Portuguese', nativeName: 'Portugu\u00eas' },
+		{ code: 'ro', name: 'Romanian', nativeName: 'Rom\u00e2n\u0103' },
+		{ code: 'sv', name: 'Swedish', nativeName: 'Svenska' },
+		{
+			code: 'ua',
+			name: 'Ukrainian',
+			nativeName: '\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430',
+		},
+	],
+};

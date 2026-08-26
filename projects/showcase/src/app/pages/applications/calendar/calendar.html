@@ -1,0 +1,24 @@
+<div class="calendar-page">
+	<h1>Calendar</h1>
+
+	<div class="calendar-page__grid">
+		<wcard>
+			<winput [type]="'date'" [(wModel)]="selectedDate" />
+		</wcard>
+
+		<wcard [title]="'Events'">
+			@if (eventsForSelectedDate().length === 0) {
+				<p style="color: var(--p-text-muted-color)">No events for the selected day.</p>
+			} @else {
+				<div class="calendar-page__events">
+					@for (event of eventsForSelectedDate(); track event.title) {
+						<div class="calendar-page__event">
+							<wtag [type]="'info'" [value]="event.time" />
+							<span>{{ event.title }}</span>
+						</div>
+					}
+				</div>
+			}
+		</wcard>
+	</div>
+</div>

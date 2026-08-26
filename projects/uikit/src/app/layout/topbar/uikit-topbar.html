@@ -1,0 +1,46 @@
+<header class="uikit-topbar">
+	<button
+		type="button"
+		class="uikit-topbar__menu-toggle"
+		aria-label="Toggle navigation"
+		(click)="menuToggle.emit()"
+	>
+		<span class="material-icons">menu</span>
+	</button>
+
+	<span class="uikit-topbar__title">NGX UI Kit</span>
+
+	<div class="uikit-topbar__actions">
+		<button
+			wbutton
+			type="light"
+			[rounded]="true"
+			icon="palette"
+			ariaLabel="Design Lab"
+			wtooltip="Design Lab"
+			tooltipPosition="bottom"
+			(wClick)="goToDesignLab()"
+		></button>
+
+		<button
+			wbutton
+			type="light"
+			[rounded]="true"
+			icon="download"
+			[disabled]="!designLabState.hasChanges()"
+			ariaLabel="Download changed theme config as JSON"
+			wtooltip="Download Config"
+			tooltipPosition="bottom"
+			(wClick)="downloadConfig()"
+		></button>
+
+		<button
+			wbutton
+			type="light"
+			[rounded]="true"
+			[icon]="designLabState.dark ? 'light_mode' : 'dark_mode'"
+			[ariaLabel]="designLabState.dark ? 'Switch to light mode' : 'Switch to dark mode'"
+			(wClick)="designLabState.toggleDarkMode()"
+		></button>
+	</div>
+</header>

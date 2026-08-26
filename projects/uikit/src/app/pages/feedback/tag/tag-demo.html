@@ -1,0 +1,23 @@
+<h1 class="demo-page__title">Tag</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Types</h2>
+	<div class="demo-section__row">
+		@for (type of types; track type) {
+			<wtag [value]="type" [type]="type" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Icons</h2>
+	<div class="demo-section__row">
+		<wtag value="Verified" icon="check" type="success" />
+		<wtag value="Pending" icon="schedule" type="warning" />
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Rounded</h2>
+	<wtag value="New" [rounded]="true" />
+</section>

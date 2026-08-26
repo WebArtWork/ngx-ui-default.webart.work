@@ -1,0 +1,15 @@
+<div class="showcase-shell" [class.showcase-shell--sidebar-open]="sidebarOpen()">
+	<sc-topbar class="showcase-shell__topbar" (menuToggle)="toggleSidebar()" />
+
+	<aside class="showcase-shell__sidebar">
+		<sc-sidebar />
+	</aside>
+
+	<main class="showcase-shell__content">
+		<router-outlet />
+	</main>
+
+	@if (sidebarOpen()) {
+		<div class="showcase-shell__mask" (click)="toggleSidebar()"></div>
+	}
+</div>

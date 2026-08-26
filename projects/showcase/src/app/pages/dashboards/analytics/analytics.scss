@@ -1,0 +1,61 @@
+.analytics__kpis {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.analytics__kpi {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+}
+
+.analytics__kpi-icon {
+	font-size: 1.5rem;
+	color: var(--p-primary-color);
+}
+
+.analytics__kpi-value {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.analytics__kpi-label {
+	color: var(--p-text-muted-color);
+}
+
+.analytics__kpi-change {
+	margin-left: auto;
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+
+.analytics__kpi-change--up {
+	color: var(--p-green-500);
+}
+
+.analytics__kpi-change--down {
+	color: var(--p-red-500);
+}
+
+.analytics__grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1.5rem;
+}
+
+.analytics__progress-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+.analytics__progress-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-size: 0.875rem;
+}

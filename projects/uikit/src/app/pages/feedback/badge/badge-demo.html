@@ -1,0 +1,18 @@
+<h1 class="demo-page__title">Badge</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Types</h2>
+	<div class="demo-section__row">
+		@for (type of types; track type) {
+			<wbadge [value]="2" [type]="type" />
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Sizes</h2>
+	<div class="demo-section__row" style="align-items: center">
+		<wbadge value="2" />
+		<wbadge value="4" size="large" />
+	</div>
+</section>

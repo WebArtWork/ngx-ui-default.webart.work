@@ -1,0 +1,206 @@
+<div class="landing">
+	<section class="landing__hero">
+		<h1 class="landing__hero-title">Build faster with ngx-prime</h1>
+		<p class="landing__hero-subtitle">
+			NGX Prime Default is a free Angular 22 admin/business template built entirely on the
+			ngx-prime component library — standalone components, signals, zoneless change detection and
+			runtime theming out of the box. This site is a full working example built from it; your own
+			product starts small, inside <code>src/app</code>.
+		</p>
+		<button wbutton type="primary" routerLink="/dashboards/default">View Dashboard</button>
+	</section>
+
+	<section class="landing__features">
+		@for (feature of features; track feature.title) {
+			<wcard class="landing__feature-card">
+				<i class="landing__feature-icon material-symbols-outlined">{{ feature.icon }}</i>
+				<h3 class="landing__feature-title">{{ feature.title }}</h3>
+				<p class="landing__feature-description">{{ feature.description }}</p>
+			</wcard>
+		}
+	</section>
+
+	<section class="landing__section">
+		<h2 class="landing__section-title">Development tools</h2>
+		<p class="landing__section-subtitle">
+			These aren't separate products — they're supporting apps that live alongside the main app to
+			help with design, translation and day-to-day development.
+		</p>
+		<div class="landing__projects">
+			@for (project of relatedProjects; track project.title) {
+				<wcard class="landing__project-card">
+					<i class="landing__project-icon material-symbols-outlined">{{ project.icon }}</i>
+					<h3 class="landing__project-title">{{ project.title }}</h3>
+					<p class="landing__project-description">{{ project.description }}</p>
+					<a class="landing__project-link" [href]="project.url" target="_blank" rel="noopener">
+						{{ project.url.replace('https://', '') }}
+						<i class="material-symbols-outlined">arrow_outward</i>
+					</a>
+				</wcard>
+			}
+		</div>
+	</section>
+
+	<section class="landing__section">
+		<h2 class="landing__section-title">Pages in this showcase</h2>
+		<p class="landing__section-subtitle">
+			Every page below is built entirely from ngx-prime components, with concrete demo data.
+		</p>
+		<div class="landing__page-groups">
+			@for (group of pageGroups; track group.title) {
+				<wcard class="landing__page-group">
+					<div class="landing__page-group-header">
+						<i class="material-symbols-outlined">{{ group.icon }}</i>
+						<h3>{{ group.title }}</h3>
+					</div>
+					<ul class="landing__page-list">
+						@for (page of group.pages; track page.path) {
+							<li>
+								<a [routerLink]="page.path" class="landing__page-name">{{ page.name }}</a>
+								<span class="landing__page-description">{{ page.description }}</span>
+							</li>
+						}
+					</ul>
+				</wcard>
+			}
+		</div>
+	</section>
+
+	<section class="landing__section">
+		<h2 class="landing__section-title">Get the template</h2>
+		<p class="landing__section-subtitle">
+			<code>src/app</code> is the actual product template — it ships with only a handful of
+			starter pages. Everything else in the repository, including this showcase, the UI Kit and the
+			Translator, exists only to support that template and isn't part of what you ship.
+		</p>
+		<div class="landing__setup-guides">
+			<wcard class="landing__setup-card">
+				<div class="landing__setup-header">
+					<span class="landing__setup-name">New to the command line?</span>
+				</div>
+				<p class="landing__setup-note">
+					First,
+					<a href="https://nodejs.org" target="_blank" rel="noopener">install Node.js</a>
+					. Then create a folder to keep your projects in — you'll clone into it below.
+				</p>
+				<div class="landing__setup-body">
+					<div class="landing__setup-command">
+						@for (line of workFolderLines; track $index) {
+							<div class="landing__setup-line" [class.landing__setup-comment]="isComment(line)">
+								{{ line }}
+							</div>
+						}
+					</div>
+					<button
+						wbutton
+						[text]="true"
+						icon="content_copy"
+						(click)="copyCommand('work-folder', workFolderCommand)"
+					>
+						Copy
+					</button>
+				</div>
+				@if (copiedCommand() === 'work-folder') {
+					<span class="landing__setup-copied">Copied!</span>
+				}
+			</wcard>
+
+			<wcard class="landing__setup-card">
+				<div class="landing__setup-header">
+					<span class="landing__setup-name">NGX Prime Default</span>
+				</div>
+				<div class="landing__setup-body">
+					<div class="landing__setup-command">
+						@for (line of setupLines; track $index) {
+							<div class="landing__setup-line" [class.landing__setup-comment]="isComment(line)">
+								{{ line }}
+							</div>
+						}
+					</div>
+					<button
+						wbutton
+						[text]="true"
+						icon="content_copy"
+						(click)="copyCommand('template', setupCommand)"
+					>
+						Copy
+					</button>
+				</div>
+				@if (copiedCommand() === 'template') {
+					<span class="landing__setup-copied">Copied!</span>
+				}
+			</wcard>
+
+			<wcard class="landing__setup-card">
+				<div class="landing__setup-header">
+					<span class="landing__setup-name">AI coding agents</span>
+				</div>
+				<p class="landing__setup-note">
+					We prefer working with this template through terminal-based AI coding agents —
+					<a href="https://code.claude.com/docs" target="_blank" rel="noopener">Claude Code</a>,
+					<a href="https://developers.openai.com/codex/" target="_blank" rel="noopener">Codex CLI</a>
+					and
+					<a href="https://google-gemini.github.io/gemini-cli/docs/" target="_blank" rel="noopener"
+						>Gemini CLI</a
+					>
+					are the ones we use most, though most popular coding agents work the same way.
+				</p>
+				<p class="landing__setup-note">
+					That's what the <i class="material-symbols-outlined">auto_awesome</i> button in this showcase's own topbar is
+					for: open it on any page, name your new page, pick a role and the elements you want to
+					keep, then copy the generated prompt. From inside your cloned project, launch your agent
+					(e.g. <code>claude</code>, <code>codex</code>, or <code>gemini</code>) and paste the
+					prompt in — it builds that page for you inside <code>src/app</code>.
+				</p>
+			</wcard>
+
+			<wcard class="landing__setup-card">
+				<div class="landing__setup-header">
+					<span class="landing__setup-name">Push to your own GitHub repo</span>
+				</div>
+				<p class="landing__setup-note">
+					The clone above still points at our template's repo. Create a new, empty repository on
+					GitHub for your project, then repoint your local clone at it and push:
+				</p>
+				<div class="landing__setup-body">
+					<div class="landing__setup-command">
+						@for (line of githubLines; track $index) {
+							<div class="landing__setup-line" [class.landing__setup-comment]="isComment(line)">
+								{{ line }}
+							</div>
+						}
+					</div>
+					<button
+						wbutton
+						[text]="true"
+						icon="content_copy"
+						(click)="copyCommand('github', githubCommand)"
+					>
+						Copy
+					</button>
+				</div>
+				@if (copiedCommand() === 'github') {
+					<span class="landing__setup-copied">Copied!</span>
+				}
+				<p class="landing__setup-note">
+					Then, in your new repo on GitHub, add an <code>SSH_PRIVATE_KEY</code> secret under
+					<strong>Settings → Secrets and variables → Actions</strong> — the included
+					<code>.github/workflows/deploy.yml</code> needs it to push your build to the
+					<code>gh-pages</code> branch. Once it's run once, go to
+					<strong>Settings → Pages</strong> and
+					<a
+						href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site"
+						target="_blank"
+						rel="noopener"
+						>set the publishing source</a
+					>
+					to the <code>gh-pages</code> branch.
+				</p>
+			</wcard>
+		</div>
+	</section>
+
+	<footer class="landing__footer">
+		<p>NGX Prime Default Showcase</p>
+	</footer>
+</div>

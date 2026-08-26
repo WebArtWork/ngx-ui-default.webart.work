@@ -1,0 +1,84 @@
+.chat {
+	display: grid;
+	grid-template-columns: 16rem 1fr;
+	gap: 1rem;
+	height: calc(100vh - 8rem);
+}
+
+.chat__contact-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.chat__contact {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.5rem;
+	border: none;
+	background: transparent;
+	border-radius: var(--p-content-border-radius);
+	cursor: pointer;
+	text-align: left;
+	width: 100%;
+}
+
+.chat__contact--active {
+	background: var(--p-content-hover-background);
+}
+
+.chat__contact-name {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.chat__contact-last {
+	font-size: 0.8rem;
+	color: var(--p-text-muted-color);
+}
+
+.chat__conversation {
+	display: flex;
+	flex-direction: column;
+}
+
+.chat__messages {
+	flex: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.chat__bubble-row {
+	display: flex;
+}
+
+.chat__bubble-row--me {
+	justify-content: flex-end;
+}
+
+.chat__bubble {
+	max-width: 70%;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.75rem;
+	background: var(--p-content-hover-background);
+}
+
+.chat__bubble--me {
+	background: var(--p-primary-color);
+	color: var(--p-primary-contrast-color);
+}
+
+.chat__bubble-time {
+	font-size: 0.7rem;
+	opacity: 0.7;
+	margin-top: 0.25rem;
+}
+
+.chat__composer {
+	display: flex;
+	gap: 0.5rem;
+}

@@ -1,0 +1,11 @@
+.showcase-sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+	padding: 1rem 0.75rem;
+}
+
+.showcase-sidebar__nav {
+	width: 100%;
+}

@@ -1,0 +1,20 @@
+<nav class="uikit-sidebar">
+	<waccordion class="uikit-sidebar__nav" [multiple]="true">
+		@for (group of groups; track group.label) {
+		<waccordion-panel [header]="group.label">
+			<ul class="uikit-sidebar__list">
+				@for (item of group.items; track item.routerLink) {
+				<li>
+					<a
+						class="uikit-sidebar__link"
+						[routerLink]="item.routerLink"
+						routerLinkActive="uikit-sidebar__link--active"
+						>{{ item.label }}</a
+					>
+				</li>
+				}
+			</ul>
+		</waccordion-panel>
+		}
+	</waccordion>
+</nav>

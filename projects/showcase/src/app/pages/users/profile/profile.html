@@ -1,0 +1,30 @@
+<div class="profile">
+	<wcard class="profile__card">
+		<div class="profile__header">
+			<wavatar label="AL" size="large" shape="circle" class="profile__avatar" />
+			<div>
+				<h1 class="profile__name">Ada Lovelace</h1>
+				<p class="profile__title">Frontend Architect</p>
+			</div>
+		</div>
+
+		<wdivider />
+
+		<div class="profile__stats">
+			@for (stat of stats; track stat.label) {
+				<div class="profile__stat">
+					<div class="profile__stat-value">{{ stat.value }}</div>
+					<div class="profile__stat-label">{{ stat.label }}</div>
+				</div>
+			}
+		</div>
+
+		<wdivider />
+
+		<div class="profile__tags">
+			@for (tag of tags; track tag) {
+				<wtag [value]="tag" type="secondary" />
+			}
+		</div>
+	</wcard>
+</div>

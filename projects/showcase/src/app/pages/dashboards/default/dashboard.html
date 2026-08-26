@@ -1,0 +1,23 @@
+<div class="dashboard">
+	<div class="dashboard__stats">
+		@for (stat of stats; track stat.label) {
+			<wcard class="dashboard__stat-card">
+				<div class="dashboard__stat">
+					<i class="dashboard__stat-icon" [class]="stat.icon"></i>
+					<div>
+						<div class="dashboard__stat-value">{{ stat.value }}</div>
+						<div class="dashboard__stat-label">{{ stat.label }}</div>
+					</div>
+				</div>
+			</wcard>
+		}
+	</div>
+
+	<wcard [title]="'Recent Orders'" class="dashboard__orders">
+		<wtable [rows]="orders" [(columns)]="columns" [config]="tableConfig" [bindValue]="'id'" [title]="''">
+			<ng-template cell="status" let-row>
+				<wtag [value]="row.status" [type]="tagType(row.status)"></wtag>
+			</ng-template>
+		</wtable>
+	</wcard>
+</div>

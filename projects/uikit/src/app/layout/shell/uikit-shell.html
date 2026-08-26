@@ -1,0 +1,23 @@
+<div
+	class="uikit-shell"
+	[class.uikit-shell--sidebar-open]="sidebarOpen()"
+	[class.uikit-shell--overlay-menu]="designLabState.menuMode() === 'overlay'"
+>
+	<uk-topbar class="uikit-shell__topbar" (menuToggle)="toggleSidebar()" />
+
+	<aside class="uikit-shell__sidebar">
+		<uk-sidebar />
+	</aside>
+
+	<main class="uikit-shell__content">
+		<router-outlet />
+	</main>
+
+	@if (sidebarOpen()) {
+		<div class="uikit-shell__mask" (click)="toggleSidebar()"></div>
+	}
+</div>
+
+<wbutton-styles />
+<wtooltip-styles />
+<wconfirm-popup-styles />

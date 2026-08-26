@@ -1,0 +1,14 @@
+<div class="auth">
+	<wcard [title]="'Create Account'" class="auth__card">
+		<div class="auth__form">
+			<winput label="Name" [(wModel)]="name" placeholder="Full name" />
+			<winput type="email" label="Email" [(wModel)]="email" placeholder="name@example.com" />
+			<winput type="password" label="Password" [(wModel)]="password" />
+			<winput type="checkbox" [(wModel)]="acceptTerms" label="I agree to the terms of service" />
+			<button wbutton type="primary" icon="person_add" extraClass="w-full">Create Account</button>
+		</div>
+		<p class="auth__switch">
+			Already have an account? <a routerLink="/authentication/login">Sign in</a>
+		</p>
+	</wcard>
+</div>

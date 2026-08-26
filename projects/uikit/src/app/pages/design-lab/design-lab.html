@@ -1,0 +1,107 @@
+<h1 class="demo-page__title">Design Lab</h1>
+
+<p class="demo-page__note">
+	Live configuration surface for ngx-ui's theme. Every control below updates the running app
+	instantly via <code>ThemeService</code> / <code>DesignLabState</code> — the same CSS custom
+	properties a real project would set through <code>provideNgxUi()</code> or override at runtime.
+</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Density</h2>
+	<div class="demo-section__row">
+		@for (density of densities; track density) {
+			<button
+				wbutton
+				[type]="themeService.density() === density ? 'primary' : 'light'"
+				(wClick)="setDensity(density)"
+			>
+				{{ density }}
+			</button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Radius</h2>
+	<div class="demo-section__row">
+		@for (radius of radiuses; track radius) {
+			<button
+				wbutton
+				[type]="themeService.radius() === radius ? 'primary' : 'light'"
+				(wClick)="setRadius(radius)"
+			>
+				{{ radius }}
+			</button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Primary Color Swatches</h2>
+	<div class="demo-section__row">
+		@for (swatch of primarySwatches; track swatch.name) {
+			<button
+				type="button"
+				[attr.aria-label]="swatch.name"
+				[attr.aria-pressed]="tokenValue(colorFields[0]) === swatch.color"
+				(click)="setPrimarySwatch(swatch.color)"
+				style="width: 2rem; height: 2rem; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0"
+				[style.background]="swatch.color"
+				[style.border-color]="tokenValue(colorFields[0]) === swatch.color ? 'var(--c-text-primary)' : 'transparent'"
+			></button>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Colors</h2>
+	<div class="demo-section__row" style="flex-wrap: wrap; gap: 1.5rem">
+		@for (field of colorFields; track field.key) {
+			<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+				{{ field.label }}
+				<input
+					type="color"
+					[value]="tokenValue(field)"
+					(change)="setToken(field.key, $any($event.target).value)"
+				/>
+			</label>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Component Radius</h2>
+	<div class="demo-section__row" style="flex-wrap: wrap; gap: 1.5rem">
+		@for (field of radiusFields; track field.key) {
+			<label style="display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem">
+				{{ field.label }}
+				<input
+					type="text"
+					[value]="tokenValue(field)"
+					(change)="setToken(field.key, $any($event.target).value)"
+					style="width: 6rem"
+				/>
+			</label>
+		}
+	</div>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Reset</h2>
+	<button wbutton type="light" [disabled]="!designLabState.hasChanges()" (wClick)="designLabState.reset()">
+		Reset overrides
+	</button>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Live Preview</h2>
+	<wcard title="Sample Card" style="max-width: 20rem; display: block">
+		<p>Card body content reacting to the tokens above.</p>
+		<div class="demo-section__row" style="margin-top: 0.5rem">
+			<button wbutton>Primary</button>
+			<button wbutton type="danger">Danger</button>
+			<wtag value="Tag" />
+			<wbadge value="3" />
+		</div>
+	</wcard>
+</section>

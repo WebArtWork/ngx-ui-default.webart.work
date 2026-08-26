@@ -1,0 +1,27 @@
+<h1 class="demo-page__title">Card</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<wcard title="Simple Card" subtitle="Card subheader" style="width: 22rem; display: block">
+		<p>Card content goes here. Cards are commonly used to group related information.</p>
+	</wcard>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">With footer</h2>
+	<wcard title="Card with Actions" style="width: 22rem; display: block">
+		<p>Cards can include a footer with actions such as buttons.</p>
+		<div wcardFooter style="display: flex; justify-content: flex-end; gap: 0.5rem">
+			<button wbutton [text]="true">Cancel</button>
+			<button wbutton>Save</button>
+		</div>
+	</wcard>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Custom header</h2>
+	<wcard style="width: 22rem; display: block">
+		<span wcardHeader class="material-icons" style="padding: 1rem">star</span>
+		<p>A card can accept a fully custom header instead of the title/subtitle inputs.</p>
+	</wcard>
+</section>

@@ -1,0 +1,15 @@
+<h1 class="demo-page__title">Timeline</h1>
+
+<p class="demo-page__note">
+	Order-tracking timeline built from Timeline + Card + Button, the pattern an order-details page
+	uses.
+</p>
+
+<section class="demo-section">
+	<wcard title="Order #10234" style="max-width: 32rem; display: block">
+		<wtimeline [items]="events" />
+		<div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.75rem">
+			<button wbutton size="small" icon="place">Track Package</button>
+		</div>
+	</wcard>
+</section>

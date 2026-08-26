@@ -1,0 +1,41 @@
+<div class="product-form">
+	<wcard [title]="'Create / Edit Product'">
+		<div class="product-form__grid">
+			<label class="product-form__field">
+				<span>Name</span>
+				<winput [type]="'text'" [(wModel)]="name" [placeholder]="'Product name'"></winput>
+			</label>
+			<label class="product-form__field">
+				<span>Category</span>
+				<wselect
+					[items]="categories"
+					[bindLabel]="'label'"
+					[bindValue]="'value'"
+					[(wModel)]="category"
+					[placeholder]="'Select a category'"
+				></wselect>
+			</label>
+			<label class="product-form__field">
+				<span>Price</span>
+				<winput [type]="'number'" [(wModel)]="price"></winput>
+			</label>
+			<label class="product-form__field">
+				<span>Stock</span>
+				<winput [type]="'number'" [(wModel)]="stock"></winput>
+			</label>
+			<div class="product-form__field product-form__field--full">
+				<span>Description</span>
+				<weditor [(wModel)]="description"></weditor>
+			</div>
+			<div class="product-form__field product-form__field--full">
+				<span>Images</span>
+				<ngx-file [(wFiles)]="images" [multiple]="true" [accept]="'image/*'" [view]="'dropzone'" (wChange)="onImageUpload()"></ngx-file>
+			</div>
+		</div>
+
+		<div class="product-form__actions">
+			<button wbutton [type]="'secondary'" [outlined]="true">Cancel</button>
+			<button wbutton [type]="'primary'" [icon]="'check'">Save Product</button>
+		</div>
+	</wcard>
+</div>

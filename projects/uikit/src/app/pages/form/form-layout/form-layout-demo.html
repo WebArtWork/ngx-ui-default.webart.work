@@ -1,0 +1,44 @@
+<h1 class="demo-page__title">Form Layout</h1>
+
+<p class="demo-page__note">
+	A realistic registration form assembled from several Form components together, with a
+	responsive grid and validation states — the pattern a template consumer actually copies.
+</p>
+
+<section class="demo-section">
+	<form
+		style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 40rem"
+		(ngSubmit)="submit()"
+	>
+		<winput label="First Name" [(wModel)]="firstName" [error]="firstNameError()" />
+
+		<winput label="Last Name" [(wModel)]="lastName" [error]="lastNameError()" />
+
+		<div style="grid-column: span 2">
+			<winput label="Email" type="email" [(wModel)]="email" [error]="emailError()" />
+		</div>
+
+		<winput label="Password" type="password" [(wModel)]="password" />
+
+		<winput label="Birth Date" type="date" [(wModel)]="birthDate" />
+
+		<div style="grid-column: span 2">
+			<wselect
+				label="Country"
+				[items]="countries"
+				bindLabel="name"
+				bindValue="code"
+				[(wModel)]="country"
+				placeholder="Select a country"
+			/>
+		</div>
+
+		<div style="grid-column: span 2">
+			<winput type="checkbox" label="I accept the terms and conditions" [(wModel)]="acceptTerms" />
+		</div>
+
+		<div style="grid-column: span 2">
+			<button wbutton type="primary">Create Account</button>
+		</div>
+	</form>
+</section>

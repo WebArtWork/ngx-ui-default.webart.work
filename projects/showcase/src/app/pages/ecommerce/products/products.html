@@ -1,0 +1,14 @@
+<div class="products">
+	<div class="products__header">
+		<h1>Products</h1>
+		<a wbutton [type]="'primary'" [icon]="'add'" [routerLink]="['/ecommerce/product-create-edit']">New Product</a>
+	</div>
+
+	<wcard>
+		<wtable [rows]="products" [columns]="columns" [config]="config" [bindValue]="'id'" [title]="'Products'">
+			<ng-template cell="statusLabel" let-product>
+				<wtag [type]="product.tagType" [value]="product.statusLabel"></wtag>
+			</ng-template>
+		</wtable>
+	</wcard>
+</div>

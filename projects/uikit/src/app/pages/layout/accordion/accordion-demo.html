@@ -1,0 +1,28 @@
+<h1 class="demo-page__title">Accordion</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<waccordion>
+		<waccordion-panel header="Header I" [expanded]="true">
+			<p style="margin: 0">Content of the first panel.</p>
+		</waccordion-panel>
+		<waccordion-panel header="Header II">
+			<p style="margin: 0">Content of the second panel.</p>
+		</waccordion-panel>
+		<waccordion-panel header="Header III">
+			<p style="margin: 0">Content of the third panel.</p>
+		</waccordion-panel>
+	</waccordion>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Multiple</h2>
+	<waccordion [multiple]="true">
+		<waccordion-panel header="Header I" [expanded]="true">
+			<p style="margin: 0">Content of the first panel.</p>
+		</waccordion-panel>
+		<waccordion-panel header="Header II" [expanded]="true">
+			<p style="margin: 0">Content of the second panel.</p>
+		</waccordion-panel>
+	</waccordion>
+</section>

@@ -1,0 +1,23 @@
+<h1 class="demo-page__title">Input</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<winput placeholder="Enter text" [(wModel)]="basicValue" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">With Label</h2>
+	<winput label="Full name" placeholder="Enter your name" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Clearable</h2>
+	<winput [clearable]="true" [(wModel)]="clearableValue" />
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">States</h2>
+	<div class="demo-section__row">
+		<winput placeholder="Disabled" [disabled]="true" />
+	</div>
+</section>

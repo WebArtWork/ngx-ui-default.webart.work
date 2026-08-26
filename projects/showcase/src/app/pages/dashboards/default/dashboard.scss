@@ -1,0 +1,26 @@
+.dashboard__stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.dashboard__stat {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.dashboard__stat-icon {
+	font-size: 1.5rem;
+	color: var(--p-primary-color);
+}
+
+.dashboard__stat-value {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.dashboard__stat-label {
+	color: var(--p-text-muted-color);
+}

@@ -1,0 +1,10 @@
+<div class="users">
+	<wtable title="Users" [rows]="users" [columns]="columns" [config]="config" [bindValue]="'id'">
+		<ng-template sort="name"></ng-template>
+		<ng-template sort="role"></ng-template>
+
+		<ng-template cell="status" let-row>
+			<wtag [value]="row.status === 'success' ? 'Active' : 'Inactive'" [type]="row.status" />
+		</ng-template>
+	</wtable>
+</div>

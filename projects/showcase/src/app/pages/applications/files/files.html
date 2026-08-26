@@ -1,0 +1,18 @@
+<div class="files">
+	<h1>Files</h1>
+	<div style="margin-bottom: 1rem">
+		<wbreadcrumb [items]="breadcrumbItems" [homeIcon]="'home'" />
+	</div>
+
+	<wcard>
+		<div style="margin-bottom: 1rem">
+			<ngx-file [multiple]="true" [label]="'Upload'" [view]="'list'" (wChange)="onUpload($event)" />
+		</div>
+
+		<wtable [rows]="files" [(columns)]="filesColumns" [bindValue]="'name'">
+			<ng-template cell="name" let-file>
+				<i class="material-icons" style="margin-right: 0.5rem">{{ file.icon }}</i>{{ file.name }}
+			</ng-template>
+		</wtable>
+	</wcard>
+</div>

@@ -1,0 +1,18 @@
+<h1 class="demo-page__title">MultiSelect</h1>
+
+<p class="demo-page__note">
+	ngx-ui doesn't have a separate MultiSelect component — <code>Select</code> has a built-in
+	<code>multiple</code> mode instead.
+</p>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<wselect
+		[(wModel)]="selectedCities"
+		[items]="cities"
+		bindLabel="name"
+		bindValue="code"
+		[multiple]="true"
+		placeholder="Select cities"
+	/>
+</section>

@@ -1,0 +1,53 @@
+<div class="grid gap-4">
+	<div
+		class="flex flex-col gap-4 rounded-[var(--radius-card)] border border-[var(--c-border)] bg-[var(--c-bg-secondary)] p-5 shadow-[var(--shadow-sm)] sm:p-4"
+	>
+		<form
+			(submit)="wFormSubmit(); $event.preventDefault()"
+			class="flex flex-col gap-3"
+		>
+			<div>
+				<winput
+					type="text"
+					wClass="w-full"
+					[placeholder]="translateService.translate('Введіть ім\'я...')()"
+					[formField]="clientForm.name"
+				/>
+				<app-field-error [field]="clientForm.name" />
+			</div>
+
+			<div>
+				<winput
+					type="email"
+					wClass="w-full"
+					[placeholder]="translateService.translate('Введіть email...')()"
+					[formField]="clientForm.email"
+				/>
+				<app-field-error [field]="clientForm.email" />
+			</div>
+
+			<div>
+				<winput
+					type="tel"
+					wClass="w-full"
+					[placeholder]="translateService.translate('Введіть телефон...')()"
+					[formField]="clientForm.phone"
+				/>
+				<app-field-error [field]="clientForm.phone" />
+			</div>
+
+			<winput
+				type="textarea"
+				wClass="w-full"
+				[placeholder]="translateService.translate('Введіть опис...')()"
+				[formField]="clientForm.bio"
+			/>
+
+			<div class="mt-2 flex flex-wrap gap-2">
+				<button wbutton [disabled]="isSubmitDisabled()">
+					<span translate>Створити</span>
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

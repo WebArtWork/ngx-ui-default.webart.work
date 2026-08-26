@@ -1,0 +1,28 @@
+<h1 class="demo-page__title">Tabs</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<wtabs>
+		<wtab header="Header I">
+			<p style="margin: 0">Content of tab 1.</p>
+		</wtab>
+		<wtab header="Header II">
+			<p style="margin: 0">Content of tab 2.</p>
+		</wtab>
+		<wtab header="Header III">
+			<p style="margin: 0">Content of tab 3.</p>
+		</wtab>
+	</wtabs>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Disabled Tab</h2>
+	<wtabs>
+		<wtab header="Header I">
+			<p style="margin: 0">Content of tab 1.</p>
+		</wtab>
+		<wtab header="Header II" [disabled]="true">
+			<p style="margin: 0">Content of tab 2.</p>
+		</wtab>
+	</wtabs>
+</section>

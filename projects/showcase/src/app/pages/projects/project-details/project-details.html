@@ -1,0 +1,18 @@
+<div class="project-details">
+	<h1>Website Redesign</h1>
+
+	<wcard>
+		<wtabs>
+			<wtab header="Activity">
+				<wtimeline [items]="activity"></wtimeline>
+			</wtab>
+			<wtab header="Tasks">
+				<wtable [rows]="tasks" [columns]="taskColumns" [config]="taskTableConfig" [bindValue]="'task'">
+					<ng-template cell="status" let-row>
+						<wtag [value]="row.statusLabel" [type]="row.status" />
+					</ng-template>
+				</wtable>
+			</wtab>
+		</wtabs>
+	</wcard>
+</div>

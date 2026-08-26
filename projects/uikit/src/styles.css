@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+@import 'tailwindcss-primeui';
+@import 'primeicons/primeicons.css';
+
+.demo-page__title {
+	margin: 0 0 1.5rem;
+	font-size: 1.5rem;
+}
+
+.demo-section {
+	margin-bottom: 2rem;
+}
+
+.demo-section__title {
+	margin: 0 0 0.75rem;
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: var(--p-text-muted-color);
+}
+
+.demo-section__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+}

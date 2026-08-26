@@ -1,0 +1,26 @@
+<div class="order-details">
+	<h1>Order ORD-2037</h1>
+
+	<div class="order-details__grid">
+		<wcard [title]="'Status'" class="order-details__timeline-card">
+			<wtimeline [items]="timelineItems" [layout]="'vertical'"></wtimeline>
+		</wcard>
+
+		<wcard [title]="'Customer'">
+			<div class="order-details__customer">
+				<div><strong>{{ customer.name }}</strong></div>
+				<div>{{ customer.email }}</div>
+				<div>{{ customer.address }}</div>
+			</div>
+		</wcard>
+	</div>
+
+	<wcard [title]="'Line Items'" class="order-details__items">
+		<wtable [rows]="lineItems" [columns]="[
+			{ title: 'Product', field: 'product' },
+			{ title: 'Quantity', field: 'quantity' },
+			{ title: 'Price', field: 'price' },
+			{ title: 'Total', field: 'total' }
+		]"></wtable>
+	</wcard>
+</div>

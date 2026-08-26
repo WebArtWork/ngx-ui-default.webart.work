@@ -1,0 +1,67 @@
+<p-dialog
+	[(visible)]="visible"
+	[modal]="true"
+	[draggable]="false"
+	[style]="{ width: '640px' }"
+	header="Create page with AI"
+>
+	@if (config(); as cfg) {
+		<div class="page-prompt">
+			<div class="page-prompt__row">
+				<label class="page-prompt__field">
+					<span>New page name</span>
+					<input
+						pInputText
+						type="text"
+						placeholder="e.g. orders-summary"
+						[ngModel]="pageName()"
+						(ngModelChange)="pageName.set($event)"
+					/>
+				</label>
+
+				<label class="page-prompt__field">
+					<span>User role</span>
+					<p-select
+						[options]="roleOptions"
+						[editable]="true"
+						appendTo="body"
+						placeholder="e.g. guest, user, admin"
+						[ngModel]="role()"
+						(ngModelChange)="role.set($event)"
+					/>
+				</label>
+			</div>
+
+			<div class="page-prompt__field">
+				<span>Elements to include</span>
+				<div class="page-prompt__elements">
+					@for (element of cfg.elements; track element.id) {
+						<label class="page-prompt__element">
+							<p-checkbox
+								[binary]="true"
+								[ngModel]="isSelected(element.id)"
+								(ngModelChange)="setSelected(element.id, $event)"
+							/>
+							<span>
+								<strong>{{ element.label }}</strong>
+								<small>{{ element.description }}</small>
+							</span>
+						</label>
+					}
+				</div>
+			</div>
+
+			<label class="page-prompt__field">
+				<span>Prompt for the AI agent</span>
+				<textarea pTextarea [autoResize]="true" readonly [value]="prompt()"></textarea>
+			</label>
+
+			<div class="page-prompt__actions">
+				<p-button label="Copy prompt" icon="pi pi-copy" (onClick)="copyPrompt()" />
+				@if (copied()) {
+					<span class="page-prompt__copied">Copied!</span>
+				}
+			</div>
+		</div>
+	}
+</p-dialog>

@@ -1,0 +1,37 @@
+.user-form {
+	max-width: 42rem;
+}
+
+.user-form__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+}
+
+.user-form__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+
+	span {
+		font-size: 0.875rem;
+		color: var(--p-text-muted-color);
+	}
+}
+
+.user-form__field--inline {
+	flex-direction: row;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.user-form__field--full {
+	grid-column: span 2;
+}
+
+.user-form__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.75rem;
+	margin-top: 1.5rem;
+}

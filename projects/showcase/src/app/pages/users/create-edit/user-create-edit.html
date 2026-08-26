@@ -1,0 +1,29 @@
+<div class="user-form">
+	<wcard title="Create / Edit User">
+		<div class="user-form__grid">
+			<winput label="Name" placeholder="Full name" [(wModel)]="name" />
+			<winput label="Email" type="email" placeholder="name@example.com" [(wModel)]="email" />
+			<wselect
+				label="Role"
+				[items]="roles"
+				bindLabel="label"
+				bindValue="value"
+				placeholder="Select a role"
+				[(wModel)]="role"
+			/>
+			<label class="user-form__field user-form__field--inline">
+				<span>Active</span>
+				<wtoggle [(checked)]="active" />
+			</label>
+			<div class="user-form__field user-form__field--full">
+				<span>Avatar</span>
+				<ngx-file accept="image/*" placeholder="Drag and drop an avatar image here." (wChange)="onAvatarUpload()" />
+			</div>
+		</div>
+
+		<div class="user-form__actions">
+			<button wbutton type="secondary" [outlined]="true" [disableSubmit]="true">Cancel</button>
+			<button wbutton type="primary" icon="check" [disableSubmit]="true">Save User</button>
+		</div>
+	</wcard>
+</div>

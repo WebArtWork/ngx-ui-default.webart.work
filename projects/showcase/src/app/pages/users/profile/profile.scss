@@ -1,0 +1,41 @@
+.profile__card {
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.profile__header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.profile__name {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.profile__title {
+	margin: 0;
+	color: var(--p-text-muted-color);
+}
+
+.profile__stats {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.profile__stat-value {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.profile__stat-label {
+	color: var(--p-text-muted-color);
+}
+
+.profile__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}

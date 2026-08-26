@@ -1,0 +1,15 @@
+<h1 class="demo-page__title">Table</h1>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Basic</h2>
+	<wtable [rows]="products" [columns]="columns" bindValue="code">
+		<ng-template cell="status" let-row>
+			<wtag [type]="type(row.status)" [value]="row.status" />
+		</ng-template>
+	</wtable>
+</section>
+
+<section class="demo-section">
+	<h2 class="demo-section__title">Pagination</h2>
+	<wtable [rows]="products" [columns]="nameColumns" bindValue="code" [config]="{ perPage: 2 }" />
+</section>
