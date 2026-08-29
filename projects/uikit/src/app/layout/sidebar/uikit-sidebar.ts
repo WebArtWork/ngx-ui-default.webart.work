@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AccordionComponent, AccordionPanelComponent } from '@wawjs/ngx-ui';
 
@@ -12,7 +12,6 @@ interface SidebarGroup {
 	imports: [AccordionComponent, AccordionPanelComponent, RouterLink, RouterLinkActive],
 	templateUrl: './uikit-sidebar.html',
 	styleUrl: './uikit-sidebar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UikitSidebar {
 	protected readonly groups: SidebarGroup[] = [

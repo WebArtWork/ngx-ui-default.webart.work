@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonDirective, Modal, ModalService } from '@wawjs/ngx-ui';
 import { DialogContent } from './dialog-content';
 
@@ -6,7 +6,6 @@ import { DialogContent } from './dialog-content';
 	selector: 'uk-dialog-demo',
 	imports: [ButtonDirective],
 	templateUrl: './dialog-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DialogDemo {
 	private readonly _modalService = inject(ModalService);

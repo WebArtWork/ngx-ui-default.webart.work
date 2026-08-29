@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuComponent, type MenuItem } from '@wawjs/ngx-ui';
 
 @Component({
@@ -6,7 +6,6 @@ import { MenuComponent, type MenuItem } from '@wawjs/ngx-ui';
 	imports: [MenuComponent],
 	templateUrl: './showcase-sidebar.html',
 	styleUrl: './showcase-sidebar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowcaseSidebar {
 	protected readonly items: MenuItem[] = [

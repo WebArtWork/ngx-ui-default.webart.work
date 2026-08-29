@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { ButtonDirective, InputComponent, SelectComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-form-layout-demo',
 	imports: [ButtonDirective, InputComponent, SelectComponent],
 	templateUrl: './form-layout-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormLayoutDemo {
 	protected readonly firstName = signal('');

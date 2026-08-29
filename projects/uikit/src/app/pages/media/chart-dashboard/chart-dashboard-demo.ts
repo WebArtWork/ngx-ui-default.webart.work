@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-chart-dashboard-demo',
 	imports: [ChartComponent],
 	templateUrl: './chart-dashboard-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartDashboardDemo {
 	protected readonly revenue = {

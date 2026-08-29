@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
 	BadgeComponent,
 	ButtonDirective,
@@ -25,7 +25,6 @@ interface TokenField {
 	selector: 'uk-design-lab',
 	imports: [ButtonDirective, CardComponent, TagComponent, BadgeComponent],
 	templateUrl: './design-lab.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DesignLab {
 	protected readonly designLabState = inject(DesignLabState);

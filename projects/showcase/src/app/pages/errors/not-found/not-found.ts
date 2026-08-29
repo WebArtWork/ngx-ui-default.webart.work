@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonDirective } from '@wawjs/ngx-ui';
 
@@ -7,6 +7,5 @@ import { ButtonDirective } from '@wawjs/ngx-ui';
 	imports: [ButtonDirective, RouterLink],
 	templateUrl: './not-found.html',
 	styleUrl: './not-found.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotFound {}

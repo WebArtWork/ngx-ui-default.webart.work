@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ButtonDirective, FileComponent, TagComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-file-composite-demo',
 	imports: [ButtonDirective, FileComponent, TagComponent],
 	templateUrl: './file-composite-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileCompositeDemo {
 	protected readonly files = signal([

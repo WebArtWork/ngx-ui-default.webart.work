@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
+import { Component, OnDestroy, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	ButtonDirective,
@@ -42,7 +42,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [FormsModule, ButtonDirective, CardComponent, InputComponent, TabsComponent, TabPanelComponent],
 	templateUrl: './settings.html',
 	styleUrl: './settings.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountSettings implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

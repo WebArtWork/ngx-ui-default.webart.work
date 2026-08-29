@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SelectComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-multiselect-demo',
 	imports: [SelectComponent],
 	templateUrl: './multiselect-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultiSelectDemo {
 	protected readonly cities = [

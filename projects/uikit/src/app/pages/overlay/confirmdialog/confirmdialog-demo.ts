@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonDirective, ConfirmService } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-confirmdialog-demo',
 	imports: [ButtonDirective],
 	templateUrl: './confirmdialog-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmDialogDemo {
 	private readonly _confirmService = inject(ConfirmService);

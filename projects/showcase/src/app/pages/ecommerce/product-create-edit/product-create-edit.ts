@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
+import { Component, OnDestroy, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	ButtonDirective,
@@ -55,7 +55,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [FormsModule, ButtonDirective, CardComponent, InputComponent, SelectComponent, EditorComponent, FileComponent],
 	templateUrl: './product-create-edit.html',
 	styleUrl: './product-create-edit.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCreateEdit implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

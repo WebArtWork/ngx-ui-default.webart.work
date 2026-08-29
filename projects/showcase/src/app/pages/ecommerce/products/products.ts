@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonDirective, CardComponent, TableComponent, TagComponent } from '@wawjs/ngx-ui';
 
@@ -39,7 +39,6 @@ const STATUS_TYPE: Record<Product['status'], 'success' | 'warning' | 'danger'> =
 	imports: [ButtonDirective, CardComponent, TagComponent, TableComponent, RouterLink],
 	templateUrl: './products.html',
 	styleUrl: './products.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Products implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

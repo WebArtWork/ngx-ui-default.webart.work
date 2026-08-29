@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import {
 	CardComponent,
 	TableComponent,
@@ -38,7 +38,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [CardComponent, TabsComponent, TabPanelComponent, TimelineComponent, TableComponent, TagComponent],
 	templateUrl: './project-details.html',
 	styleUrl: './project-details.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectDetails implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

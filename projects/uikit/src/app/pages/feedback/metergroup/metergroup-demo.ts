@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { MeterGroupComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-metergroup-demo',
 	imports: [MeterGroupComponent],
 	templateUrl: './metergroup-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MeterGroupDemo {
 	protected readonly storage = [

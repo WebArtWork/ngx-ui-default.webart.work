@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuComponent, MenuItem } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-menu-demo',
 	imports: [MenuComponent],
 	templateUrl: './menu-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuDemo {
 	protected readonly items: MenuItem[] = [

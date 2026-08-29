@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { AvatarComponent, CardComponent, DividerComponent, TagComponent } from '@wawjs/ngx-ui';
 
 import { PagePromptService } from '../../../shared/page-prompt/page-prompt.service';
@@ -36,7 +36,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [CardComponent, AvatarComponent, DividerComponent, TagComponent],
 	templateUrl: './profile.html',
 	styleUrl: './profile.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Profile implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

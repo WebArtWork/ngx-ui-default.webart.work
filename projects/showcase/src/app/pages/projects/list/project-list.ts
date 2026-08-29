@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CardComponent, ProgressBarComponent, TagComponent } from '@wawjs/ngx-ui';
 
@@ -26,7 +26,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [CardComponent, ProgressBarComponent, TagComponent, RouterLink],
 	templateUrl: './project-list.html',
 	styleUrl: './project-list.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectList implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

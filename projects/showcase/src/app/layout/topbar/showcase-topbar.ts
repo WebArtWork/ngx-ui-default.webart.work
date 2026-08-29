@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, Component, PLATFORM_ID, inject, output, signal } from '@angular/core';
+import { Component, PLATFORM_ID, inject, output, signal } from '@angular/core';
 import { ButtonDirective } from '@wawjs/ngx-ui';
 import { PagePromptDialog } from '../../shared/page-prompt/page-prompt-dialog';
 import { PagePromptService } from '../../shared/page-prompt/page-prompt.service';
@@ -11,7 +11,6 @@ const DARK_MODE_KEY = 'sc-dark-mode';
 	imports: [ButtonDirective, PagePromptDialog],
 	templateUrl: './showcase-topbar.html',
 	styleUrl: './showcase-topbar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowcaseTopbar {
 	protected readonly pagePromptService = inject(PagePromptService);

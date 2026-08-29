@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SelectComponent } from '@wawjs/ngx-ui';
 
 interface City {
@@ -10,7 +10,6 @@ interface City {
 	selector: 'uk-select-demo',
 	imports: [SelectComponent],
 	templateUrl: './select-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectDemo {
 	protected readonly cities: City[] = [

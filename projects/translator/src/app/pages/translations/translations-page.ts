@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	ButtonDirective,
@@ -22,7 +22,6 @@ import { TranslationRow, TranslationsState } from '../../translations/translatio
 		CellDirective,
 	],
 	templateUrl: './translations-page.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TranslationsPage {
 	protected readonly translationsState = inject(TranslationsState);

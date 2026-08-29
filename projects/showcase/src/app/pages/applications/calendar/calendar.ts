@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, computed, inject, signal } from '@angular/core';
+import { Component, OnDestroy, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardComponent, InputComponent, TagComponent } from '@wawjs/ngx-ui';
 
@@ -42,7 +42,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [FormsModule, CardComponent, InputComponent, TagComponent],
 	templateUrl: './calendar.html',
 	styleUrl: './calendar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarPage implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

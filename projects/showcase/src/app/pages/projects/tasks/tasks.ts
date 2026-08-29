@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OrderListModule } from '@wawjs/ngx-prime/orderlist';
 
@@ -26,7 +26,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [FormsModule, OrderListModule],
 	templateUrl: './tasks.html',
 	styleUrl: './tasks.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tasks implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

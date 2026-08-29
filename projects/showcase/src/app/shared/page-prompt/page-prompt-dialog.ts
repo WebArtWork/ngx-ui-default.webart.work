@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, model, signal } from '@angular/core';
+import { Component, computed, effect, inject, model, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CheckboxModule } from '@wawjs/ngx-prime/checkbox';
@@ -24,7 +24,6 @@ const KNOWN_ROLES = ['guest', 'user'];
 	],
 	templateUrl: './page-prompt-dialog.html',
 	styleUrl: './page-prompt-dialog.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PagePromptDialog {
 	private readonly pagePromptService = inject(PagePromptService);

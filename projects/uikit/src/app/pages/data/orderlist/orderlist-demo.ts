@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { OrderListComponent } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-orderlist-demo',
 	imports: [OrderListComponent],
 	templateUrl: './orderlist-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderListDemo {
 	protected readonly products = signal([

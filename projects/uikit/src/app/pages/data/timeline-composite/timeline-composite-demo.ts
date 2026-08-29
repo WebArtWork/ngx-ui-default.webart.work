@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonDirective, CardComponent, TimelineComponent, TimelineItem } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-timeline-composite-demo',
 	imports: [ButtonDirective, CardComponent, TimelineComponent],
 	templateUrl: './timeline-composite-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimelineCompositeDemo {
 	protected readonly events: TimelineItem[] = [

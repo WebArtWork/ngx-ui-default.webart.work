@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonDirective, TooltipDirective } from '@wawjs/ngx-ui';
 import { DesignLabState } from '../design-lab-state';
@@ -8,7 +8,6 @@ import { DesignLabState } from '../design-lab-state';
 	imports: [ButtonDirective, TooltipDirective],
 	templateUrl: './uikit-topbar.html',
 	styleUrl: './uikit-topbar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UikitTopbar {
 	protected readonly designLabState = inject(DesignLabState);

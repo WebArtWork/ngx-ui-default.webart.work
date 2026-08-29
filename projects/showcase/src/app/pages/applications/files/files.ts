@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import type { BreadcrumbItem } from '@wawjs/ngx-ui';
 import { BreadcrumbComponent, CardComponent, FileComponent, TableComponent } from '@wawjs/ngx-ui';
 
@@ -37,7 +37,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [BreadcrumbComponent, CardComponent, TableComponent, FileComponent],
 	templateUrl: './files.html',
 	styleUrl: './files.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Files implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

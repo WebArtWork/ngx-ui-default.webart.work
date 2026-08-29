@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonDirective, CardComponent } from '@wawjs/ngx-ui';
 
@@ -26,7 +26,6 @@ interface RelatedProject {
 	imports: [ButtonDirective, CardComponent, RouterLink],
 	templateUrl: './landing.html',
 	styleUrl: './landing.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Landing {
 	protected readonly features = [

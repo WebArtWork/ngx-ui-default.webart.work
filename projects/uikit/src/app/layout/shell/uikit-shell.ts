@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
 	ButtonStylesComponent,
@@ -21,7 +21,6 @@ import { UikitTopbar } from '../topbar/uikit-topbar';
 	],
 	templateUrl: './uikit-shell.html',
 	styleUrl: './uikit-shell.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UikitShell {
 	protected readonly designLabState = inject(DesignLabState);

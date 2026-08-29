@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CellDirective, TableComponent, TagComponent, TagType } from '@wawjs/ngx-ui';
 
 interface Product {
@@ -13,7 +13,6 @@ interface Product {
 	selector: 'uk-table-demo',
 	imports: [TableComponent, CellDirective, TagComponent],
 	templateUrl: './table-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableDemo {
 	protected readonly products: Product[] = [

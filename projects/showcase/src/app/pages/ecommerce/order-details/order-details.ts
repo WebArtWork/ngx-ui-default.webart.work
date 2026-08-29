@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { CardComponent, TableComponent, TimelineComponent } from '@wawjs/ngx-ui';
 
 import { PagePromptService } from '../../../shared/page-prompt/page-prompt.service';
@@ -46,7 +46,6 @@ const PRIME_ICON_TO_MATERIAL: Record<string, string> = {
 	imports: [CardComponent, TableComponent, TimelineComponent],
 	templateUrl: './order-details.html',
 	styleUrl: './order-details.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderDetails implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

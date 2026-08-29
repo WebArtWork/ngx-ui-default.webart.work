@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonDirective } from '@wawjs/ngx-ui';
 
 @Component({
 	selector: 'uk-button-demo',
 	imports: [ButtonDirective],
 	templateUrl: './button-demo.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonDemo {
 	protected readonly sizes = [undefined, 'small', 'large'] as const;

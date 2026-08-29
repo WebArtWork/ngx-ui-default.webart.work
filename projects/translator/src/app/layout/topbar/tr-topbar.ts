@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, Component, PLATFORM_ID, inject, signal } from '@angular/core';
+import { Component, PLATFORM_ID, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonDirective, SelectComponent, TooltipDirective } from '@wawjs/ngx-ui';
 import { TranslationsState } from '../../translations/translations.state';
@@ -11,7 +11,6 @@ const DARK_MODE_STORAGE_KEY = 'translator-dark-mode';
 	imports: [ButtonDirective, FormsModule, SelectComponent, TooltipDirective],
 	templateUrl: './tr-topbar.html',
 	styleUrl: './tr-topbar.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TrTopbar {
 	protected readonly translationsState = inject(TranslationsState);

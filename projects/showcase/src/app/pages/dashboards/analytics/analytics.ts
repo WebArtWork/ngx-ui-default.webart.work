@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { CardComponent, ChartComponent, MeterGroupComponent, ProgressBarComponent } from '@wawjs/ngx-ui';
 
 import { PagePromptService } from '../../../shared/page-prompt/page-prompt.service';
@@ -39,7 +39,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [CardComponent, ChartComponent, MeterGroupComponent, ProgressBarComponent],
 	templateUrl: './analytics.html',
 	styleUrl: './analytics.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Analytics implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

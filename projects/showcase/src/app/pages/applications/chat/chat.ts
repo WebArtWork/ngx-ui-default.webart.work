@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
+import { Component, OnDestroy, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AvatarComponent, ButtonDirective, CardComponent, InputComponent } from '@wawjs/ngx-ui';
 
@@ -39,7 +39,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	imports: [FormsModule, AvatarComponent, ButtonDirective, CardComponent, InputComponent],
 	templateUrl: './chat.html',
 	styleUrl: './chat.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Chat implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);

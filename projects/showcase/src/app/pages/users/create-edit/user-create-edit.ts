@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
+import { Component, OnDestroy, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	ButtonDirective,
@@ -57,7 +57,6 @@ const PAGE_PROMPT_CONFIG: PagePromptConfig = {
 	],
 	templateUrl: './user-create-edit.html',
 	styleUrl: './user-create-edit.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCreateEdit implements OnDestroy {
 	private readonly pagePromptService = inject(PagePromptService);
