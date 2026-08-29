@@ -54,6 +54,7 @@ export class TopbarComponent {
 	});
 
 	readonly burgerIcon = computed(() => BURGER_ICONS[this.burgerState()]);
+	readonly burgerExpanded = this._sidebarService.anySidebarVisible;
 
 	onBurgerClick(): void {
 		this._sidebarService.burgerClick();

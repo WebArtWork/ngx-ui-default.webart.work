@@ -15,9 +15,9 @@
 		></ngx-file>
 
 		<form (submit)="wFormSubmit(); $event.preventDefault()" class="profile__form">
-			<winput type="text" wClass="w-full" [placeholder]="translateService.translate('Enter your name...')()" [formField]="profileForm.name" />
-			<winput type="tel" wClass="w-full" [placeholder]="translateService.translate('Enter your phone...')()" [formField]="profileForm.phone" />
-			<winput type="textarea" wClass="w-full" [placeholder]="translateService.translate('Enter your bio...')()" [formField]="profileForm.bio" />
+			<winput type="text" wClass="w-full" [label]="translateService.translate('Name')()" [placeholder]="translateService.translate('Enter your name...')()" [formField]="profileForm.name" />
+			<winput type="tel" wClass="w-full" [label]="translateService.translate('Phone')()" [placeholder]="translateService.translate('Enter your phone...')()" [formField]="profileForm.phone" />
+			<winput type="textarea" wClass="w-full" [label]="translateService.translate('Bio')()" [placeholder]="translateService.translate('Enter your bio...')()" [formField]="profileForm.bio" />
 
 			<div class="profile__actions">
 				<button wbutton [disabled]="isSubmitDisabled()"><span translate>Update</span></button>

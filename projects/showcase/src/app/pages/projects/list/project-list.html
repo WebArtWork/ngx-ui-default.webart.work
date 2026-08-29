@@ -2,15 +2,17 @@
 	<h1>Projects</h1>
 	<div class="project-list__grid">
 		@for (project of projects; track project.name) {
-			<wcard [routerLink]="['/projects/project-details']" class="project-list__card">
-				<div class="project-list__card-header">
-					<h3>{{ project.name }}</h3>
-					<wtag [value]="project.statusLabel" [type]="project.status" />
-				</div>
-				<p class="project-list__client">{{ project.client }}</p>
-				<wprogressbar [value]="project.progress" />
-				<p class="project-list__due">Due {{ project.dueDate }}</p>
-			</wcard>
+			<a [routerLink]="['/projects/project-details']" class="project-list__card-link">
+				<wcard class="project-list__card">
+					<div class="project-list__card-header">
+						<h3>{{ project.name }}</h3>
+						<wtag [value]="project.statusLabel" [type]="project.status" />
+					</div>
+					<p class="project-list__client">{{ project.client }}</p>
+					<wprogressbar [value]="project.progress" />
+					<p class="project-list__due">Due {{ project.dueDate }}</p>
+				</wcard>
+			</a>
 		}
 	</div>
 </div>

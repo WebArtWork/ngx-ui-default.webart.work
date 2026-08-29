@@ -10,6 +10,7 @@
 			<app-nav-icon
 				[routerLink]="sidebarToggler() ? '/dashboard' : '/'"
 				[name]="viewport() === 'mobile' ? '' : sidebarToggler() ? translateService.translate('Dashboard')() : ''"
+				[ariaLabel]="sidebarToggler() ? translateService.translate('Dashboard')() : translateService.translate('Home')()"
 				[icon]="sidebarToggler() ? 'th-large' : 'home'"
 			/>
 		</li>
@@ -27,15 +28,21 @@
 				class="inline-flex cursor-pointer items-center justify-center border-0 bg-transparent p-2 text-[1.375rem] leading-none text-[var(--c-text-secondary)] transition-colors hover:text-[var(--c-primary)]"
 				(click)="onBurgerClick()"
 				[attr.aria-label]="translateService.translate('Menu')()"
+				[attr.aria-expanded]="burgerExpanded()"
+				aria-controls="app-sidebar"
 			>
-				<i class="pi pi-{{ burgerIcon() }}"></i>
+				<i class="pi pi-{{ burgerIcon() }}" aria-hidden="true"></i>
 			</button>
 		</li>
 		} @if (showProfile()) {
 		<li
 			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
 		>
-			<app-nav-icon icon="user" routerLink="/profile" />
+			<app-nav-icon
+				icon="user"
+				routerLink="/profile"
+				[ariaLabel]="translateService.translate('Profile')()"
+			/>
 		</li>
 		}
 	</ul>

@@ -32,12 +32,13 @@
 
 		<div class="chat__composer">
 			<winput
+				ariaLabel="Message"
 				placeholder="Type a message…"
 				style="flex: 1"
 				[(wModel)]="draft"
 				(wKeydown)="$event.key === 'Enter' && send()"
 			/>
-			<button wbutton [type]="'primary'" [icon]="'send'" (wClick)="send()"></button>
+			<button wbutton [type]="'primary'" [icon]="'send'" [ariaLabel]="'Send message'" (wClick)="send()"></button>
 		</div>
 	</wcard>
 </div>

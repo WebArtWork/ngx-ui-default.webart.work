@@ -16,6 +16,7 @@ export class DialogDemo {
 			component: DialogContent,
 			message: 'This is a basic dialog.',
 			size: 'small',
+			ariaLabel: 'Basic dialog',
 		} satisfies Modal);
 	}
 
@@ -24,6 +25,7 @@ export class DialogDemo {
 			component: DialogContent,
 			message: 'A larger dialog, using size="big".',
 			size: 'big',
+			ariaLabel: 'Large dialog',
 		} satisfies Modal);
 	}
 }

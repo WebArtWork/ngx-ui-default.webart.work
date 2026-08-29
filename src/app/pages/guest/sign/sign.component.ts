@@ -19,7 +19,6 @@ import { User, UserService } from '@wawjs/ngx-bos';
 import { HttpService } from '@wawjs/ngx-http';
 import { AlertService, ButtonDirective, InputComponent } from '@wawjs/ngx-ui';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
-import { FieldErrorComponent } from '../../../shared/field-error/field-error.component';
 import { ThemeState } from '../../../theme/theme-state';
 import { RespStatus, SignModel } from './sign.interface';
 
@@ -37,7 +36,6 @@ const signSchema = schema<SignModel>((path) => {
 		FormField,
 		ButtonDirective,
 		InputComponent,
-		FieldErrorComponent,
 		TranslateDirective,
 	],
 	templateUrl: './sign.component.html',

@@ -19,7 +19,7 @@
 				<span class="material-icons">description</span>
 				<span style="flex: 1">{{ file.name }}</span>
 				<wtag type="secondary" [value]="file.size" />
-				<button wbutton [text]="true" type="danger" size="small" icon="delete" (wClick)="remove(file.name)"></button>
+				<button wbutton [text]="true" type="danger" size="small" icon="delete" [ariaLabel]="'Remove ' + file.name" (wClick)="remove(file.name)"></button>
 			</div>
 		}
 	</div>

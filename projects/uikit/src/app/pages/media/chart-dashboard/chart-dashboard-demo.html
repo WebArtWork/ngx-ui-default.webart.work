@@ -8,19 +8,19 @@
 	<div>
 		<h2 class="demo-section__title">Revenue Trend</h2>
 		<div style="height: 16rem">
-			<wchart type="line" [data]="revenue" [options]="chartOptions" />
+			<wchart type="line" [data]="revenue" [options]="chartOptions" description="Revenue trend over time" />
 		</div>
 	</div>
 	<div>
 		<h2 class="demo-section__title">Traffic Channels</h2>
 		<div style="height: 16rem">
-			<wchart type="doughnut" [data]="channels" />
+			<wchart type="doughnut" [data]="channels" description="Traffic by channel" />
 		</div>
 	</div>
 	<div style="grid-column: span 2">
 		<h2 class="demo-section__title">Weekly Active Users</h2>
 		<div style="height: 14rem">
-			<wchart type="bar" [data]="weeklyActive" [options]="chartOptions" />
+			<wchart type="bar" [data]="weeklyActive" [options]="chartOptions" description="Weekly active users" />
 		</div>
 	</div>
 </section>

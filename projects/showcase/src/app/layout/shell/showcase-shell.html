@@ -1,15 +1,17 @@
 <div class="showcase-shell" [class.showcase-shell--sidebar-open]="sidebarOpen()">
+	<a href="#main-content" class="skip-link">Skip to content</a>
+
 	<sc-topbar class="showcase-shell__topbar" (menuToggle)="toggleSidebar()" />
 
 	<aside class="showcase-shell__sidebar">
 		<sc-sidebar />
 	</aside>
 
-	<main class="showcase-shell__content">
+	<main id="main-content" class="showcase-shell__content">
 		<router-outlet />
 	</main>
 
 	@if (sidebarOpen()) {
-		<div class="showcase-shell__mask" (click)="toggleSidebar()"></div>
+		<div class="showcase-shell__mask" aria-hidden="true" (click)="toggleSidebar()"></div>
 	}
 </div>

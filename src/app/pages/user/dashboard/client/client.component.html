@@ -10,35 +10,36 @@
 				<winput
 					type="text"
 					wClass="w-full"
+					[label]="translateService.translate('Ім\'я')()"
 					[placeholder]="translateService.translate('Введіть ім\'я...')()"
 					[formField]="clientForm.name"
 				/>
-				<app-field-error [field]="clientForm.name" />
 			</div>
 
 			<div>
 				<winput
 					type="email"
 					wClass="w-full"
+					[label]="translateService.translate('Email')()"
 					[placeholder]="translateService.translate('Введіть email...')()"
 					[formField]="clientForm.email"
 				/>
-				<app-field-error [field]="clientForm.email" />
 			</div>
 
 			<div>
 				<winput
 					type="tel"
 					wClass="w-full"
+					[label]="translateService.translate('Телефон')()"
 					[placeholder]="translateService.translate('Введіть телефон...')()"
 					[formField]="clientForm.phone"
 				/>
-				<app-field-error [field]="clientForm.phone" />
 			</div>
 
 			<winput
 				type="textarea"
 				wClass="w-full"
+				[label]="translateService.translate('Опис')()"
 				[placeholder]="translateService.translate('Введіть опис...')()"
 				[formField]="clientForm.bio"
 			/>

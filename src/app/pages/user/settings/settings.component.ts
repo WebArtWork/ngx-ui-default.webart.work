@@ -14,13 +14,12 @@ import {
 	TranslateDirective,
 	TranslateService,
 } from '@wawjs/ngx-translate';
-import { FieldErrorComponent } from '../../../shared/field-error/field-error.component';
 import { ThemeState } from '../../../theme/theme-state';
 import { SecurityModel } from './settings.interface';
 import { securitySchema } from './settings.schema';
 
 @Component({
-	imports: [FormField, ButtonDirective, InputComponent, FieldErrorComponent, TranslateDirective],
+	imports: [FormField, ButtonDirective, InputComponent, TranslateDirective],
 	templateUrl: './settings.component.html',
 	styleUrl: './settings.component.scss',
 })

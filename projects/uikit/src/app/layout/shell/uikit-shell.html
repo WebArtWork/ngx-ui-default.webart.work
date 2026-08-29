@@ -14,7 +14,7 @@
 	</main>
 
 	@if (sidebarOpen()) {
-		<div class="uikit-shell__mask" (click)="toggleSidebar()"></div>
+		<div class="uikit-shell__mask" aria-hidden="true" (click)="toggleSidebar()"></div>
 	}
 </div>
 

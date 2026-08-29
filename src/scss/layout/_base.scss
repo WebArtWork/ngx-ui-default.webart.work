@@ -20,6 +20,23 @@ body {
 	background: var(--c-bg-primary);
 }
 
+.skip-link {
+	position: absolute;
+	top: -3rem;
+	left: 0.5rem;
+	z-index: 1000;
+	padding: 0.5rem 1rem;
+	background: var(--c-bg-secondary);
+	color: var(--c-text-primary);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-md);
+	transition: top var(--motion-fast, 120ms) var(--easing, ease);
+
+	&:focus {
+		top: 0.5rem;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

@@ -7,26 +7,29 @@
 		<div class="tr-toolbar">
 			<winput
 				[type]="'text'"
+				ariaLabel="Search key or value"
 				placeholder="Search key or value…"
 				[(wModel)]="filterText"
 				style="width: 18rem"
 			/>
-			<label style="display: flex; align-items: center; gap: 0.5rem">
+			<div style="display: flex; align-items: center; gap: 0.5rem">
 				<wtoggle
 					[checked]="onlyIssues() && translationsState.issueCount() > 0"
 					[disabled]="translationsState.issueCount() === 0"
+					[ariaLabel]="'Show only missing (' + translationsState.issueCount() + ')'"
 					(checkedChange)="onlyIssues.set($event)"
 				/>
 				Missing ({{ translationsState.issueCount() }})
-			</label>
-			<label style="display: flex; align-items: center; gap: 0.5rem">
+			</div>
+			<div style="display: flex; align-items: center; gap: 0.5rem">
 				<wtoggle
 					[checked]="onlyModified() && translationsState.modifiedCount() > 0"
 					[disabled]="translationsState.modifiedCount() === 0"
+					[ariaLabel]="'Show only modified (' + translationsState.modifiedCount() + ')'"
 					(checkedChange)="onlyModified.set($event)"
 				/>
 				Modified ({{ translationsState.modifiedCount() }})
-			</label>
+			</div>
 			<span style="flex: 1"></span>
 			<button
 				wbutton
@@ -49,6 +52,7 @@
 						<div style="display: flex; align-items: center; gap: 0.5rem">
 							<winput
 								[type]="'text'"
+								[ariaLabel]="'Translation for ' + row.key"
 								style="width: 100%"
 								[wModel]="row.values[translationsState.selectedLanguage()]"
 								(wModelChange)="setValue(row, translationsState.selectedLanguage(), $event)"

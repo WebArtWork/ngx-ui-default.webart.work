@@ -8,7 +8,7 @@
 			bindValue="code"
 			[wModel]="translationsState.selectedLanguage()"
 			(wModelChange)="onLanguageChange($event)"
-			aria-label="Language"
+			[ariaLabel]="'Language'"
 		/>
 
 		<button

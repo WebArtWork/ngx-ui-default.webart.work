@@ -8,7 +8,6 @@ import { FormField, form, submit } from '@angular/forms/signals';
 import { NEW_USER, User, UserService } from '@wawjs/ngx-bos';
 import { AlertService, ButtonDirective, InputComponent } from '@wawjs/ngx-ui';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
-import { FieldErrorComponent } from '../../../../shared/field-error/field-error.component';
 import { clientSchema } from './client.schema';
 
 @Component({
@@ -17,7 +16,6 @@ import { clientSchema } from './client.schema';
 		FormField,
 		ButtonDirective,
 		InputComponent,
-		FieldErrorComponent,
 		TranslateDirective,
 	],
 	templateUrl: './client.component.html',

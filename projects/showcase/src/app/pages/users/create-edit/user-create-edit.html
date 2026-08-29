@@ -11,10 +11,10 @@
 				placeholder="Select a role"
 				[(wModel)]="role"
 			/>
-			<label class="user-form__field user-form__field--inline">
+			<div class="user-form__field user-form__field--inline">
 				<span>Active</span>
-				<wtoggle [(checked)]="active" />
-			</label>
+				<wtoggle [(checked)]="active" [ariaLabel]="'Active'" />
+			</div>
 			<div class="user-form__field user-form__field--full">
 				<span>Avatar</span>
 				<ngx-file accept="image/*" placeholder="Drag and drop an avatar image here." (wChange)="onAvatarUpload()" />

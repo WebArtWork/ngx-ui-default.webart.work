@@ -9,6 +9,18 @@ h1 {
 	gap: 1rem;
 }
 
+.project-list__card-link {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	border-radius: var(--radius-card, var(--radius));
+
+	&:focus-visible {
+		outline: 2px solid var(--p-primary-color, var(--c-primary));
+		outline-offset: 2px;
+	}
+}
+
 .project-list__card {
 	cursor: pointer;
 }

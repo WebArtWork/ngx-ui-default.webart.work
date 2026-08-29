@@ -49,21 +49,21 @@
 						<winput
 							type="email"
 							wClass="w-full"
+							[label]="translateService.translate('Email')()"
 							[placeholder]="translateService.translate('Введіть email...')()"
 							[formField]="signForm.email"
 							[focused]="true"
 						/>
-						<app-field-error [field]="signForm.email" />
 					</div>
 
 					<div>
 						<winput
 							type="password"
 							wClass="w-full"
+							[label]="translateService.translate('Пароль')()"
 							[placeholder]="translateService.translate('Введіть пароль...')()"
 							[formField]="signForm.password"
 						/>
-						<app-field-error [field]="signForm.password" />
 					</div>
 
 					@if (showCode()) {
@@ -71,10 +71,10 @@
 						<winput
 							type="number"
 							wClass="w-full"
+							[label]="translateService.translate('Код підтвердження')()"
 							[placeholder]="translateService.translate('Введіть код з пошти...')()"
 							[formField]="signForm.resetPin"
 						/>
-						<app-field-error [field]="signForm.resetPin" />
 					</div>
 					}
 				</div>

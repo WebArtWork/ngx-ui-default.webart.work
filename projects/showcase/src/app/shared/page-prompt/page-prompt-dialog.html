@@ -25,6 +25,7 @@
 						[options]="roleOptions"
 						[editable]="true"
 						appendTo="body"
+						ariaLabel="User role"
 						placeholder="e.g. guest, user, admin"
 						[ngModel]="role()"
 						(ngModelChange)="role.set($event)"

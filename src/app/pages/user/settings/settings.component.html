@@ -3,16 +3,13 @@
 		<h2 class="settings__label" translate>Change password</h2>
 		<form (submit)="wSecuritySubmit(); $event.preventDefault()" class="settings__content">
 			<div>
-				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Enter your current password...')()" [formField]="securityForm.currentPassword" />
-				<app-field-error [field]="securityForm.currentPassword" />
+				<winput type="password" wClass="w-full" [label]="translateService.translate('Current password')()" [placeholder]="translateService.translate('Enter your current password...')()" [formField]="securityForm.currentPassword" />
 			</div>
 			<div>
-				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Enter your new password...')()" [formField]="securityForm.newPassword" />
-				<app-field-error [field]="securityForm.newPassword" />
+				<winput type="password" wClass="w-full" [label]="translateService.translate('New password')()" [placeholder]="translateService.translate('Enter your new password...')()" [formField]="securityForm.newPassword" />
 			</div>
 			<div>
-				<winput type="password" wClass="w-full" [placeholder]="translateService.translate('Confirm your new password...')()" [formField]="securityForm.confirmPassword" />
-				<app-field-error [field]="securityForm.confirmPassword" />
+				<winput type="password" wClass="w-full" [label]="translateService.translate('Confirm new password')()" [placeholder]="translateService.translate('Confirm your new password...')()" [formField]="securityForm.confirmPassword" />
 			</div>
 			<button wbutton [disabled]="isSecurityDisabled()"><span translate>Update password</span></button>
 		</form>
@@ -22,14 +19,15 @@
 		<h2 class="settings__label" translate>Theme</h2>
 		<div class="settings__content settings__content--inline settings__theme">
 			<div class="settings__theme-row">
-				<span class="settings__theme-label" translate>Mode</span>
-				<div class="settings__theme-group">
+				<span class="settings__theme-label" id="settings-mode-label" translate>Mode</span>
+				<div class="settings__theme-group" role="group" aria-labelledby="settings-mode-label">
 					@for (m of themeService.modes(); track m) {
 						<button
 							wbutton
 							[disableSubmit]="true"
 							size="small"
 							[text]="themeService.mode() !== m"
+							[attr.aria-pressed]="themeService.mode() === m"
 							(wClick)="themeService.setMode(m)"
 						>
 							{{ m }}
@@ -39,14 +37,15 @@
 			</div>
 
 			<div class="settings__theme-row">
-				<span class="settings__theme-label" translate>Density</span>
-				<div class="settings__theme-group">
+				<span class="settings__theme-label" id="settings-density-label" translate>Density</span>
+				<div class="settings__theme-group" role="group" aria-labelledby="settings-density-label">
 					@for (d of themeService.densities(); track d) {
 						<button
 							wbutton
 							[disableSubmit]="true"
 							size="small"
 							[text]="themeService.density() !== d"
+							[attr.aria-pressed]="themeService.density() === d"
 							(wClick)="themeService.setDensity(d)"
 						>
 							{{ d }}
@@ -56,14 +55,15 @@
 			</div>
 
 			<div class="settings__theme-row">
-				<span class="settings__theme-label" translate>Radius</span>
-				<div class="settings__theme-group">
+				<span class="settings__theme-label" id="settings-radius-label" translate>Radius</span>
+				<div class="settings__theme-group" role="group" aria-labelledby="settings-radius-label">
 					@for (r of themeService.radiuses(); track r) {
 						<button
 							wbutton
 							[disableSubmit]="true"
 							size="small"
 							[text]="themeService.radius() !== r"
+							[attr.aria-pressed]="themeService.radius() === r"
 							(wClick)="themeService.setRadius(r)"
 						>
 							{{ r }}

@@ -2,16 +2,18 @@
 <button
 	type="button"
 	class="sidebar__backdrop fixed inset-x-0 top-0 bottom-[var(--topbar-h)]"
-	[attr.aria-label]="translateService.translate('Menu')()"
+	[attr.aria-label]="translateService.translate('Close menu')()"
+	aria-controls="app-sidebar"
 	(click)="closeBackdrop($event)"
 ></button>
 }
 
 <aside
+	id="app-sidebar"
 	class="sidebar z-[90] flex flex-col overflow-auto bg-[var(--c-bg-secondary)] p-5 shadow"
 	[class.sidebar--min]="isMinimized()"
 	[style.width.px]="widthPx()"
-	[ngClass]="{
+	[class]="{
 		'fixed right-0 top-0 bottom-[var(--topbar-h)] h-[calc(100dvh-var(--topbar-h))]': isMobile(),
 		'md:fixed md:right-0 md:top-14 md:h-[calc(100dvh-56px)]': isPreview(),
 		'md:sticky md:top-14 md:h-[calc(100dvh-56px)]': !isMobile() && !isPreview()

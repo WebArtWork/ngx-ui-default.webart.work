@@ -3,6 +3,7 @@
 <section class="demo-section">
 	<h2 class="demo-section__title">Basic</h2>
 	<wselect
+		label="City"
 		[(wModel)]="selectedCity"
 		[items]="cities"
 		bindLabel="name"
@@ -14,6 +15,7 @@
 <section class="demo-section">
 	<h2 class="demo-section__title">Searchable</h2>
 	<wselect
+		label="City"
 		[(wModel)]="selectedCity"
 		[items]="cities"
 		bindLabel="name"
@@ -26,6 +28,7 @@
 <section class="demo-section">
 	<h2 class="demo-section__title">Clearable</h2>
 	<wselect
+		label="City"
 		[(wModel)]="selectedCity"
 		[items]="cities"
 		bindLabel="name"
@@ -38,6 +41,6 @@
 <section class="demo-section">
 	<h2 class="demo-section__title">States</h2>
 	<div class="demo-section__row">
-		<wselect [items]="cities" bindLabel="name" bindValue="code" placeholder="Disabled" [disabled]="true" />
+		<wselect label="City" [items]="cities" bindLabel="name" bindValue="code" placeholder="Disabled" [disabled]="true" />
 	</div>
 </section>

@@ -2,7 +2,7 @@
 
 <section class="demo-section">
 	<h2 class="demo-section__title">Basic</h2>
-	<winput placeholder="Enter text" [(wModel)]="basicValue" />
+	<winput label="Text" placeholder="Enter text" [(wModel)]="basicValue" />
 </section>
 
 <section class="demo-section">
@@ -12,12 +12,12 @@
 
 <section class="demo-section">
 	<h2 class="demo-section__title">Clearable</h2>
-	<winput [clearable]="true" [(wModel)]="clearableValue" />
+	<winput label="Text" [clearable]="true" [(wModel)]="clearableValue" />
 </section>
 
 <section class="demo-section">
 	<h2 class="demo-section__title">States</h2>
 	<div class="demo-section__row">
-		<winput placeholder="Disabled" [disabled]="true" />
+		<winput label="Text" placeholder="Disabled" [disabled]="true" />
 	</div>
 </section>

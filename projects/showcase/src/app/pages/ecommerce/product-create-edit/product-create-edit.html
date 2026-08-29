@@ -5,16 +5,16 @@
 				<span>Name</span>
 				<winput [type]="'text'" [(wModel)]="name" [placeholder]="'Product name'"></winput>
 			</label>
-			<label class="product-form__field">
-				<span>Category</span>
+			<div class="product-form__field">
 				<wselect
+					label="Category"
 					[items]="categories"
 					[bindLabel]="'label'"
 					[bindValue]="'value'"
 					[(wModel)]="category"
 					[placeholder]="'Select a category'"
 				></wselect>
-			</label>
+			</div>
 			<label class="product-form__field">
 				<span>Price</span>
 				<winput [type]="'number'" [(wModel)]="price"></winput>
